@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jaime García — Fotografía urbana y astrofotografía desde A Coruña">
+  <meta name="description" lang="en" content="Jaime García — Urban photography and astrophotography from A Coruña">
+  <title>Jaime García — Fotografía</title>
+
+  <!-- ═══════════════════════════════════════════
+       FUENTES
+       Cormorant Garamond → títulos y display
+       Inter              → navegación y cuerpo
+  ═══════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- ═══════════════════════════════════════════
+       ESTILOS
+  ═══════════════════════════════════════════ -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+  <!-- ═══════════════════════════════════════════
+       NAVEGACIÓN
+       - Logo
+       - Links de sección
+       - Toggle de idioma ES / EN
+  ═══════════════════════════════════════════ -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">Jaime García<span class="nav-logo-dot">.</span></a>
+
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#gallery"  data-es="Galería"   data-en="Gallery">Galería</a></li>
+        <li><a href="#about"    data-es="Sobre mí"  data-en="About">Sobre mí</a></li>
+        <li><a href="#contact"  data-es="Contacto"  data-en="Contact">Contacto</a></li>
+      </ul>
+
+      <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+        <button class="lang-btn active" onclick="setLang('es')" aria-pressed="true">ES</button>
+        <button class="lang-btn"        onclick="setLang('en')" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+       - Imagen de fondo: reemplaza hero-bg con tu foto
+         Sugerencia: una de las fotos de la Torre con el sol
+       - Título principal bilingüe
+  ═══════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+
+    <!-- IMAGEN DE FONDO DEL HERO
+         Cambia el src por tu imagen real, por ejemplo:
+         <img src="img/hero.jpg" ...>
+         Recomendado: IMG_4770.jpeg (torre con sol rojo centrado)
+    -->
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow"
+         data-es="A Coruña · Fotografía urbana &amp; astrofotografía"
+         data-en="A Coruña · Urban &amp; astrophotography">
+        A Coruña · Fotografía urbana &amp; astrofotografía
+      </p>
+
+      <h1 class="hero-title">
+        <!-- La frase se mantiene igual en ambos idiomas intencionalmente -->
+        Entre la<br>ciudad<br>y el <em>cosmos</em>
+      </h1>
+
+      <p class="hero-sub"
+         data-es="Capturando luz donde el faro más antiguo del mundo se encuentra con las nebulosas más lejanas del universo."
+         data-en="Capturing light where the world's oldest lighthouse meets the most distant nebulae in the universe.">
+        Capturando luz donde el faro más antiguo del mundo se encuentra con las nebulosas más lejanas del universo.
+      </p>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true"
+         data-es="Scroll" data-en="Scroll">Scroll</div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SOBRE MÍ
+       - Texto bilingüe
+       - Tarjetas de equipo (stats)
+         Modifica los datos de equipo aquí abajo
+  ═══════════════════════════════════════════ -->
+  <section class="about" id="about">
+
+    <div class="about-text-block fade-in">
+      <p class="section-label"
+         data-es="Sobre el fotógrafo"
+         data-en="About the photographer">Sobre el fotógrafo</p>
+
+      <h2 class="about-title"
+          data-es="Luz, tiempo<br>y escala"
+          data-en="Light, time<br>and scale">Luz, tiempo<br>y escala</h2>
+
+      <div class="about-body">
+        <p data-es="Fotógrafo aficionado con base en A Coruña. Trabajo en dos extremos opuestos de la escala: la intimidad de un insecto sobre un pétalo y la distancia de una nebulosa a miles de años luz."
+           data-en="Amateur photographer based in A Coruña. I work at two opposite ends of scale: the intimacy of an insect on a petal and the distance of a nebula thousands of light-years away.">
+          Fotógrafo aficionado con base en A Coruña. Trabajo en dos extremos opuestos de la escala: la intimidad de un insecto sobre un pétalo y la distancia de una nebulosa a miles de años luz.
+        </p>
+        <p data-es="La Torre de Hércules es mi referencia constante. Un punto fijo de 2.000 años de historia bajo cielos que cambian cada noche."
+           data-en="The Tower of Hercules is my constant reference. A fixed point of 2,000 years of history beneath skies that change every night.">
+          La Torre de Hércules es mi referencia constante. Un punto fijo de 2.000 años de historia bajo cielos que cambian cada noche.
+        </p>
+      </div>
+    </div>
+
+    <!-- TARJETAS DE EQUIPO
+         Añade o modifica tarjetas según tu equipo actual
+    -->
+    <div class="about-stats fade-in">
+
+      <div class="stat-card">
+        <div class="stat-number">72<span class="stat-unit">ED</span></div>
+        <div class="stat-label"
+             data-es="Skywatcher 72ED · Astrofotografía"
+             data-en="Skywatcher 72ED · Astrophotography">
+          Skywatcher 72ED · Astrofotografía
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number">a7<span class="stat-unit">IV</span></div>
+        <div class="stat-label"
+             data-es="Sony a7IV · Fotografía general"
+             data-en="Sony a7IV · General photography">
+          Sony a7IV · Fotografía general
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number">600<span class="stat-unit">mm</span></div>
+        <div class="stat-label"
+             data-es="Sony 200-600 · Torre &amp; paisaje"
+             data-en="Sony 200-600 · Tower &amp; landscape">
+          Sony 200-600 · Torre &amp; paisaje
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number">∞</div>
+        <div class="stat-label"
+             data-es="Años luz de distancia"
+             data-en="Light years away">
+          Años luz de distancia
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       GALERÍA
+       - Filtros por categoría
+       - Grid de imágenes
+
+       CÓMO AÑADIR UNA FOTO:
+       1. Copia uno de los bloques <div class="gallery-item">
+       2. Cambia data-cat por: astro | sunset | macro | urban
+       3. Descomenta la línea <img src="..."> y pon tu archivo
+       4. Rellena data-title y data-sub para el lightbox
+
+       EQUIPO POR CATEGORÍA (ya definido en JS):
+       - astro  → ZWO ASI 533 MC Pro · Skywatcher 72ED · Star Adventurer GTI
+       - sunset → Sony a7IV · Sony 200-600mm G OSS
+       - macro  → Sony a7IV · Sony 90mm Macro G OSS
+       - urban  → Sony a7IV
+  ═══════════════════════════════════════════ -->
+  <section class="gallery-section" id="gallery">
+
+    <div class="section-header fade-in">
+      <h2 class="section-title" data-es="Galería" data-en="Gallery">Galería</h2>
+      <span class="section-count" id="gallery-count"></span>
+    </div>
+
+    <!-- FILTROS DE CATEGORÍA -->
+    <div class="gallery-tabs" role="group">
+      <!-- <button class="tab-btn active" data-filter="all"
+              data-es="Todo" data-en="All"
+              onclick="filterGallery('all')">Todo</button> -->
+
+      <button class="tab-btn" data-filter="astro"
+              data-es="Astrofotografía" data-en="Astrophotography"
+              onclick="filterGallery('astro')">Astrofotografía</button>
+
+      <button class="tab-btn" data-filter="sunset"
+              data-es="Atardeceres" data-en="Sunsets"
+              onclick="filterGallery('sunset')">Atardeceres</button>
+
+      <button class="tab-btn" data-filter="macro"
+              data-es="Macro" data-en="Macro"
+              onclick="filterGallery('macro')">Macro</button>
+
+      <button class="tab-btn" data-filter="urban"
+              data-es="Urbana" data-en="Urban"
+              onclick="filterGallery('urban')">Urbana</button>
+    </div>
+
+    <!-- GRID DE FOTOS
+         ratio-tall       → 2:3  (vertical)
+         ratio-ultra-tall → 9:16 (muy vertical)
+         ratio-wide       → 3:2  (horizontal)
+         ratio-square     → 1:1  (cuadrado)
+    -->
+    <div class="gallery-grid" id="gallery-grid">
+
+      <!-- ── ASTROFOTOGRAFÍA ── -->
+
+      <div class="gallery-item"
+           data-cat="astro"
+           data-title="Cabeza de Caballo &amp; Llama"
+           data-sub="IC 434 · Nebulosa de emisión · Orión"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-tall ph-astro-dark">
+          <img src="img/HorseHead_01.jpg" alt="Cabeza de Caballo y Llama">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</small>
+            Cabeza de Caballo &amp; Llama
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item"
+           data-cat="astro"
+           data-title="M42 · Gran Nebulosa de Orión"
+           data-sub="Nebulosa de emisión y reflexión · Orión"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-square ph-astro-red">
+          <img src="img/M42.jpg" alt="M42 Gran Nebulosa de Orión">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</small>
+            M42 · Gran Nebulosa de Orión
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item"
+           data-cat="astro"
+           data-title="NGC 6960 · Nebulosa del Velo Occidental"
+           data-sub="Remanente de supernova · Cygnus"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-square ph-astro-blue">
+          <img src="img/NGC 6960_01.tif" alt="NGC 6960 Nebulosa del Velo">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</small>
+            NGC 6960 · Nebulosa del Velo
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item"
+           data-cat="astro"
+           data-title="Nebulosa de la Roseta · NGC 2244"
+           data-sub="Nebulosa de emisión · Monoceros"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-square ph-astro-red">
+          <img src="img/masterLight_RGB.jpg" alt="Nebulosa de la Roseta">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</small>
+            Nebulosa de la Roseta
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item"
+           data-cat="astro"
+           data-title="NGC 2264 · Árbol de Navidad &amp; Cono"
+           data-sub="Nebulosa de emisión · Monoceros"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-square ph-astro-dark">
+          <img src="img/StarReduced.tif" alt="NGC 2264 Árbol de Navidad">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</small>
+            NGC 2264 · Árbol de Navidad
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item"
+           data-cat="astro"
+           data-title="M31 · Galaxia de Andrómeda"
+           data-sub="Galaxia espiral · Andrómeda · 2,537 millones de años luz"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-wide ph-astro-dark">
+          <img src="img/M31_02_Sept2025.jpg" alt="M31 Galaxia de Andrómeda">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</small>
+            M31 · Galaxia de Andrómeda
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item"
+           data-cat="astro"
+           data-title="M33 · Galaxia del Triángulo"
+           data-sub="Galaxia espiral · Triángulo · 2,8 millones de años luz"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-wide ph-astro-dark">
+          <img src="img/M33_01_Sept2025.jpg" alt="M33 Galaxia del Triángulo">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</small>
+            M33 · Galaxia del Triángulo
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item"
+           data-cat="astro"
+           data-title="NGC2175 · Nebulosa cabeza de mono"
+           data-sub="Cúmulo abierto · Orion"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-wide ph-astro-dark">
+          <img src="img/NGC2175_02.jpg" alt="NGC2175 Nebulosa cabeza de mono">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</small>
+            NGC2175 · Nebulosa cabeza de mono
+          </div>
+        </div>
+      </div>
+
+      <!-- ── ATARDECERES ── -->
+
+      <div class="gallery-item"
+           data-cat="sunset"
+           data-title="Torre de Hércules"
+           data-sub="Sol poniente · Canide · A Coruña"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-wide ph-sun-orange">
+          <img src="img/_DSC6260.jpg" alt="Torre de Hércules al atardecer">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Atardecer" data-en="Sunset">Atardecer</small>
+            Torre de Hércules
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item"
+           data-cat="sunset"
+           data-title="Torre de Hércules"
+           data-sub="Sol rojo · Faro de Mera · A Coruña"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-ultra-tall ph-sun-red">
+          <img src="img/_DSC5014.jpg" alt="Torre de Hércules sol rojo">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Atardecer" data-en="Sunset">Atardecer</small>
+            Torre de Hércules
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item"
+           data-cat="sunset"
+           data-title="Torre de Hércules"
+           data-sub="Ocaso simétrico · Mera · A Coruña"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-tall ph-sun-orange">
+          <img src="img/_DSC5587.jpg" alt="Torre de Hércules ocaso simétrico">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Atardecer" data-en="Sunset">Atardecer</small>
+            Torre de Hércules
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ── MACRO ── -->
+
+      <div class="gallery-item"
+           data-cat="macro"
+           data-title="Geranio"
+           data-sub="Pelargonium · A Coruña"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-tall ph-macro-red">
+          <img src="img/_DSC9642.jpg" alt="Geranio rojo macro">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Macro" data-en="Macro">Macro</small>
+            Geranio
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item"
+           data-cat="macro"
+           data-title="Líquenes"
+           data-sub="Parmotrema · A Coruña"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-wide ph-macro-green">
+          <img src="img/_DSC9627.jpg" alt="Líquenes macro">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Macro" data-en="Macro">Macro</small>
+            Líquenes
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /gallery-grid -->
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       CONTACTO
+       Cambia el href del email por el tuyo real
+  ═══════════════════════════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="contact-inner fade-in">
+
+      <p class="section-label"
+         data-es="Contacto" data-en="Contact">Contacto</p>
+
+      <h2 class="contact-title"
+          data-es="Hablemos de<br>luz"
+          data-en="Let's talk<br>about light">Hablemos de<br>luz</h2>
+
+      <p class="contact-sub"
+         data-es="¿Interesado en prints, colaboraciones o proyectos fotográficos en A Coruña?"
+         data-en="Interested in prints, collaborations or photography projects in A Coruña?">
+        ¿Interesado en prints, colaboraciones o proyectos fotográficos en A Coruña?
+      </p>
+
+      <div class="contact-links">
+        <!-- CAMBIA tu@email.com por tu dirección real -->
+        <a href="mailto:jaime@jaimeg.es" class="btn btn-primary"
+           data-es="Escribir un email" data-en="Send an email">
+          Escribir un email
+        </a>
+        <a href="https://instagram.com/jaimeg95_" target="_blank" rel="noopener"
+           class="btn btn-outline">
+          @jaimeg95_
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer>
+    <p>© <span id="footer-year"></span> Jaime García ·
+      <span data-es="Todos los derechos reservados"
+            data-en="All rights reserved">Todos los derechos reservados</span>
+    </p>
+    <a href="https://instagram.com/jaimeg95_" target="_blank" rel="noopener">@jaimeg95_</a>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════
+       LIGHTBOX
+       Se controla desde js/gallery.js
+  ═══════════════════════════════════════════ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar">×</button>
+
+    <div class="lightbox-content">
+      <!-- La imagen real se inyecta por JS cuando la foto existe.
+           Mientras tanto se muestra este placeholder. -->
+      <div class="lightbox-ph" id="lightbox-ph" aria-hidden="true">
+        <span data-es="Vista previa no disponible"
+              data-en="Preview not available">Vista previa no disponible</span>
+      </div>
+
+      <div class="lightbox-info">
+        <h3 id="lightbox-title"></h3>
+        <p  id="lightbox-sub"></p>
+        <p  id="lightbox-gear" class="lightbox-gear"></p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       SCRIPTS
+       Orden importante: primero lang.js, luego gallery.js, luego main.js
+  ═══════════════════════════════════════════ -->
+  <script src="js/lang.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
