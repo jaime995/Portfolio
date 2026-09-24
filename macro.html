@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jaime García — Fotografía macro desde A Coruña: la intimidad de lo pequeño.">
+  <meta name="description" lang="en" content="Jaime García — Macro photography from A Coruña: the intimacy of the small.">
+  <title>Macro — Jaime García</title>
+
+  <!-- ═══════════════════════════════════════════
+       FAVICON
+  ═══════════════════════════════════════════ -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVEGACIÓN (idéntica en todas las páginas)
+  ═══════════════════════════════════════════ -->
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">Jaime García<span class="nav-logo-dot">.</span></a>
+
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li class="nav-dropdown">
+          <a href="index.html#gallery" class="nav-dropdown-toggle" data-es="Galería" data-en="Gallery">Galería</a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="astro.html" data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</a></li>
+            <li><a href="atardeceres.html" data-es="Torre de Hércules" data-en="Tower of Hercules">Torre de Hércules</a></li>
+            <li><a href="macro.html" data-es="Macro" data-en="Macro">Macro</a></li>
+            <li><a href="urbana.html" data-es="Urbana" data-en="Urban">Urbana</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#about"    data-es="Sobre mí"  data-en="About">Sobre mí</a></li>
+        <li><a href="index.html#contact"  data-es="Contacto"  data-en="Contact">Contacto</a></li>
+      </ul>
+
+      <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+        <button class="lang-btn active" onclick="setLang('es')" aria-pressed="true">ES</button>
+        <button class="lang-btn"        onclick="setLang('en')" aria-pressed="false">EN</button>
+      </div>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Menú de navegación a pantalla completa en móvil -->
+  <div class="nav-mobile-menu" id="nav-mobile-menu">
+    <button class="nav-mobile-close" id="nav-mobile-close" aria-label="Cerrar menú">×</button>
+    <ul class="nav-mobile-links">
+      <li><a href="index.html" data-es="Inicio" data-en="Home">Inicio</a></li>
+      <li><a href="astro.html" data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</a></li>
+      <li><a href="atardeceres.html" data-es="Torre de Hércules" data-en="Tower of Hercules">Torre de Hércules</a></li>
+      <li><a href="macro.html" data-es="Macro" data-en="Macro">Macro</a></li>
+      <li><a href="urbana.html" data-es="Urbana" data-en="Urban">Urbana</a></li>
+    </ul>
+    <div class="nav-mobile-sub">
+      <a href="index.html#about" data-es="Sobre mí" data-en="About">Sobre mí</a>
+      <a href="index.html#contact" data-es="Contacto" data-en="Contact">Contacto</a>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       CABECERA DE CATEGORÍA
+  ═══════════════════════════════════════════ -->
+  <div class="category-header">
+    <a href="index.html#gallery" class="back-link">
+      <span aria-hidden="true">←</span>
+      <span data-es="Todas las galerías" data-en="All galleries">Todas las galerías</span>
+    </a>
+    <h1 class="category-title" data-es="Macro" data-en="Macro">Macro</h1>
+    <p class="category-sub"
+       data-es="La intimidad de lo pequeño: flores, líquenes e insectos capturados con el Sony 90mm Macro G OSS."
+       data-en="The intimacy of the small: flowers, lichen and insects captured with the Sony 90mm Macro G OSS.">
+      La intimidad de lo pequeño: flores, líquenes e insectos capturados con el Sony 90mm Macro G OSS.
+    </p>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       GALERÍA — MACRO
+  ═══════════════════════════════════════════ -->
+  <section class="gallery-section no-pad-top" id="gallery">
+
+    <div class="section-header fade-in">
+      <span class="section-count" id="gallery-count"></span>
+    </div>
+
+    <div class="gallery-grid" id="gallery-grid">
+
+      <div class="gallery-item"
+           data-cat="macro"
+           data-photo-id="geranio"
+           data-title="Geranio"
+           data-sub="Pelargonium · A Coruña"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-tall ph-macro-red">
+          <img src="img/DSC9642.jpg" alt="Geranio rojo macro">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Macro" data-en="Macro">Macro</small>
+            Geranio
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item"
+           data-cat="macro"
+           data-photo-id="liquenes"
+           data-title="Líquenes"
+           data-sub="Parmotrema · A Coruña"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-wide ph-macro-green">
+          <img src="img/DSC9627.jpg" alt="Líquenes macro">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Macro" data-en="Macro">Macro</small>
+            Líquenes
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item"
+           data-cat="macro"
+           data-photo-id="mosca-hoja"
+           data-title="Mosca sobre hoja"
+           data-sub="Díptero · A Coruña"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-wide ph-macro-green">
+          <img src="img/DSC9541.jpg" alt="Mosca sobre una hoja">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Macro" data-en="Macro">Macro</small>
+            Mosca sobre hoja
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item"
+           data-cat="macro"
+           data-photo-id="abeja-alstroemeria"
+           data-title="Abeja en Alstroemeria"
+           data-sub="Alstroemeria · A Coruña"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-wide ph-macro-red">
+          <img src="img/DSC9596.jpg" alt="Abeja sobre flor rosa">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Macro" data-en="Macro">Macro</small>
+            Abeja en Alstroemeria
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /gallery-grid -->
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer>
+    <p>© <span id="footer-year"></span> Jaime García ·
+      <span data-es="Todos los derechos reservados"
+            data-en="All rights reserved">Todos los derechos reservados</span>
+    </p>
+    <a href="https://instagram.com/jaimeg95_" target="_blank" rel="noopener">@jaimeg95_</a>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════
+       LIGHTBOX
+  ═══════════════════════════════════════════ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar">×</button>
+
+    <div class="lightbox-content">
+      <div class="lightbox-ph" id="lightbox-ph" aria-hidden="true">
+        <span data-es="Vista previa no disponible"
+              data-en="Preview not available">Vista previa no disponible</span>
+      </div>
+
+      <div class="lightbox-info">
+        <h3 id="lightbox-title"></h3>
+        <p  id="lightbox-sub"></p>
+        <p  id="lightbox-desc" class="lightbox-desc"></p>
+        <p  id="lightbox-gear" class="lightbox-gear"></p>
+        <a id="lightbox-request" class="btn btn-primary lightbox-request"
+           data-es="Solicitar este print" data-en="Request this print">Solicitar este print</a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════════ -->
+  <script src="js/lang.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jaime García — La Torre de Hércules bajo distintos cielos: atardeceres, tormentas y lunas llenas.">
+  <meta name="description" lang="en" content="Jaime García — The Tower of Hercules under different skies: sunsets, storms and full moons.">
+  <title>Torre de Hércules — Jaime García</title>
+
+  <!-- ═══════════════════════════════════════════
+       FAVICON
+  ═══════════════════════════════════════════ -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVEGACIÓN (idéntica en todas las páginas)
+  ═══════════════════════════════════════════ -->
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">Jaime García<span class="nav-logo-dot">.</span></a>
+
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li class="nav-dropdown">
+          <a href="index.html#gallery" class="nav-dropdown-toggle" data-es="Galería" data-en="Gallery">Galería</a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="astro.html" data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</a></li>
+            <li><a href="atardeceres.html" data-es="Torre de Hércules" data-en="Tower of Hercules">Torre de Hércules</a></li>
+            <li><a href="macro.html" data-es="Macro" data-en="Macro">Macro</a></li>
+            <li><a href="urbana.html" data-es="Urbana" data-en="Urban">Urbana</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#about"    data-es="Sobre mí"  data-en="About">Sobre mí</a></li>
+        <li><a href="index.html#contact"  data-es="Contacto"  data-en="Contact">Contacto</a></li>
+      </ul>
+
+      <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+        <button class="lang-btn active" onclick="setLang('es')" aria-pressed="true">ES</button>
+        <button class="lang-btn"        onclick="setLang('en')" aria-pressed="false">EN</button>
+      </div>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Menú de navegación a pantalla completa en móvil -->
+  <div class="nav-mobile-menu" id="nav-mobile-menu">
+    <button class="nav-mobile-close" id="nav-mobile-close" aria-label="Cerrar menú">×</button>
+    <ul class="nav-mobile-links">
+      <li><a href="index.html" data-es="Inicio" data-en="Home">Inicio</a></li>
+      <li><a href="astro.html" data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</a></li>
+      <li><a href="atardeceres.html" data-es="Torre de Hércules" data-en="Tower of Hercules">Torre de Hércules</a></li>
+      <li><a href="macro.html" data-es="Macro" data-en="Macro">Macro</a></li>
+      <li><a href="urbana.html" data-es="Urbana" data-en="Urban">Urbana</a></li>
+    </ul>
+    <div class="nav-mobile-sub">
+      <a href="index.html#about" data-es="Sobre mí" data-en="About">Sobre mí</a>
+      <a href="index.html#contact" data-es="Contacto" data-en="Contact">Contacto</a>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       CABECERA DE CATEGORÍA
+  ═══════════════════════════════════════════ -->
+  <div class="category-header">
+    <a href="index.html#gallery" class="back-link">
+      <span aria-hidden="true">←</span>
+      <span data-es="Todas las galerías" data-en="All galleries">Todas las galerías</span>
+    </a>
+    <h1 class="category-title" data-es="Torre de Hércules" data-en="Tower of Hercules">Torre de Hércules</h1>
+    <p class="category-sub"
+       data-es="Mi referencia constante bajo todo tipo de cielos: atardeceres, tormentas y lunas llenas. Capturada con Sony a7IV y el 200-600mm desde varios puntos de A Coruña."
+       data-en="My constant reference under every kind of sky: sunsets, storms and full moons. Captured with a Sony a7IV and the 200-600mm from various spots around A Coruña.">
+      Mi referencia constante bajo todo tipo de cielos: atardeceres, tormentas y lunas llenas. Capturada con Sony a7IV y el 200-600mm desde varios puntos de A Coruña.
+    </p>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       GALERÍA — TORRE DE HÉRCULES
+  ═══════════════════════════════════════════ -->
+  <section class="gallery-section no-pad-top" id="gallery">
+
+    <div class="section-header fade-in">
+      <span class="section-count" id="gallery-count"></span>
+    </div>
+
+    <div class="gallery-grid" id="gallery-grid">
+
+      <div class="gallery-item"
+           data-cat="sunset"
+           data-photo-id="torre-canide-sol-poniente"
+           data-title="Torre de Hércules · Sol poniente"
+           data-sub="Sol poniente · Canide · A Coruña"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-wide ph-sun-orange">
+          <img src="img/DSC6260.jpg" alt="Torre de Hércules al atardecer">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Atardecer" data-en="Sunset">Atardecer</small>
+            Torre de Hércules · Sol poniente
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item"
+           data-cat="sunset"
+           data-photo-id="torre-mera-sol-rojo"
+           data-title="Torre de Hércules · Sol rojo"
+           data-sub="Sol rojo · Faro de Mera · A Coruña"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-ultra-tall ph-sun-red">
+          <img src="img/DSC5014.jpg" alt="Torre de Hércules sol rojo">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Atardecer" data-en="Sunset">Atardecer</small>
+            Torre de Hércules · Sol rojo
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item"
+           data-cat="sunset"
+           data-photo-id="torre-mera-ocaso-simetrico"
+           data-title="Torre de Hércules · Ocaso simétrico"
+           data-sub="Ocaso simétrico · Mera · A Coruña"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-tall ph-sun-orange">
+          <img src="img/DSC5587.jpg" alt="Torre de Hércules ocaso simétrico">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Atardecer" data-en="Sunset">Atardecer</small>
+            Torre de Hércules · Ocaso simétrico
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item"
+           data-cat="sunset"
+           data-photo-id="torre-mera-alineacion"
+           data-title="Torre de Hércules · Alineación desde el Faro de Mera"
+           data-sub="Faro de Mera · A Coruña"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-wide ph-sun-orange">
+          <img src="img/torre-halo-solar.jpg" alt="Torre de Hércules alineada, vista desde el Faro de Mera">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Atardecer" data-en="Sunset">Atardecer</small>
+            Torre de Hércules · Alineación desde Mera
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item"
+           data-cat="sunset"
+           data-photo-id="torre-alineacion-solar"
+           data-title="Torre de Hércules · Alineación solar"
+           data-sub="Sol tras la Torre · A Coruña"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-wide ph-sun-orange">
+          <img src="img/torre-alineacion-solar.jpg" alt="Sol alineado detrás de la Torre de Hércules">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Atardecer" data-en="Sunset">Atardecer</small>
+            Torre de Hércules · Alineación solar
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item"
+           data-cat="sunset"
+           data-photo-id="torre-atardecer-bahia"
+           data-title="Torre de Hércules · Atardecer sobre la bahía"
+           data-sub="Skyline y bahía de A Coruña"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-wide ph-sun-orange">
+          <img src="img/torre-atardecer-bahia.jpg" alt="Atardecer sobre la bahía de A Coruña con la Torre de Hércules">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Atardecer" data-en="Sunset">Atardecer</small>
+            Torre de Hércules · Atardecer sobre la bahía
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item"
+           data-cat="sunset"
+           data-photo-id="torre-tormenta"
+           data-title="Torre de Hércules · Tormenta eléctrica"
+           data-sub="Tormenta eléctrica nocturna · A Coruña"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-wide ph-astro-blue">
+          <img src="img/torre-tormenta.jpg" alt="Tormenta eléctrica sobre la Torre de Hércules">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Tormenta" data-en="Storm">Tormenta</small>
+            Torre de Hércules · Tormenta eléctrica
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item"
+           data-cat="sunset"
+           data-photo-id="torre-luna-llena"
+           data-title="Torre de Hércules · Luna llena"
+           data-sub="Luna llena tras la Torre · A Coruña"
+           onclick="openLightbox(this)">
+        <div class="gallery-placeholder ratio-tall ph-astro-dark">
+          <img src="img/torre-luna-llena.jpg" alt="Luna llena saliendo tras la Torre de Hércules">
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <small data-es="Luna llena" data-en="Full moon">Luna llena</small>
+            Torre de Hércules · Luna llena
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /gallery-grid -->
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer>
+    <p>© <span id="footer-year"></span> Jaime García ·
+      <span data-es="Todos los derechos reservados"
+            data-en="All rights reserved">Todos los derechos reservados</span>
+    </p>
+    <a href="https://instagram.com/jaimeg95_" target="_blank" rel="noopener">@jaimeg95_</a>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════
+       LIGHTBOX
+  ═══════════════════════════════════════════ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar">×</button>
+
+    <div class="lightbox-content">
+      <div class="lightbox-ph" id="lightbox-ph" aria-hidden="true">
+        <span data-es="Vista previa no disponible"
+              data-en="Preview not available">Vista previa no disponible</span>
+      </div>
+
+      <div class="lightbox-info">
+        <h3 id="lightbox-title"></h3>
+        <p  id="lightbox-sub"></p>
+        <p  id="lightbox-desc" class="lightbox-desc"></p>
+        <p  id="lightbox-gear" class="lightbox-gear"></p>
+        <a id="lightbox-request" class="btn btn-primary lightbox-request"
+           data-es="Solicitar este print" data-en="Request this print">Solicitar este print</a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════════ -->
+  <script src="js/lang.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

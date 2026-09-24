@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jaime García — Fotografía urbana y astrofotografía desde A Coruña">
+  <meta name="description" lang="en" content="Jaime García — Urban photography and astrophotography from A Coruña">
+  <title>Jaime García — Fotografía</title>
+
+  <!-- ═══════════════════════════════════════════
+       FAVICON
+  ═══════════════════════════════════════════ -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <!-- ═══════════════════════════════════════════
+       FUENTES
+       Cormorant Garamond → títulos y display
+       Inter              → navegación y cuerpo
+  ═══════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- ═══════════════════════════════════════════
+       ESTILOS
+  ═══════════════════════════════════════════ -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+  <!-- ═══════════════════════════════════════════
+       NAVEGACIÓN
+       - Logo
+       - Links de sección + desplegable "Galería" con las 4 categorías
+       - Toggle de idioma ES / EN
+
+       Esta misma barra de navegación se repite en astro.html,
+       atardeceres.html, macro.html y urbana.html.
+  ═══════════════════════════════════════════ -->
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">Jaime García<span class="nav-logo-dot">.</span></a>
+
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li class="nav-dropdown">
+          <a href="#gallery" class="nav-dropdown-toggle" data-es="Galería" data-en="Gallery">Galería</a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="astro.html" data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</a></li>
+            <li><a href="atardeceres.html" data-es="Torre de Hércules" data-en="Tower of Hercules">Torre de Hércules</a></li>
+            <li><a href="macro.html" data-es="Macro" data-en="Macro">Macro</a></li>
+            <li><a href="urbana.html" data-es="Urbana" data-en="Urban">Urbana</a></li>
+          </ul>
+        </li>
+        <li><a href="#about"    data-es="Sobre mí"  data-en="About">Sobre mí</a></li>
+        <li><a href="#contact"  data-es="Contacto"  data-en="Contact">Contacto</a></li>
+      </ul>
+
+      <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+        <button class="lang-btn active" onclick="setLang('es')" aria-pressed="true">ES</button>
+        <button class="lang-btn"        onclick="setLang('en')" aria-pressed="false">EN</button>
+      </div>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Menú de navegación a pantalla completa en móvil.
+       Se abre/cierra desde js/main.js. Se repite igual en
+       astro.html, atardeceres.html, macro.html y urbana.html
+       (solo cambian los enlaces relativos). -->
+  <div class="nav-mobile-menu" id="nav-mobile-menu">
+    <button class="nav-mobile-close" id="nav-mobile-close" aria-label="Cerrar menú">×</button>
+    <ul class="nav-mobile-links">
+      <li><a href="#hero" data-es="Inicio" data-en="Home">Inicio</a></li>
+      <li><a href="astro.html" data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</a></li>
+      <li><a href="atardeceres.html" data-es="Torre de Hércules" data-en="Tower of Hercules">Torre de Hércules</a></li>
+      <li><a href="macro.html" data-es="Macro" data-en="Macro">Macro</a></li>
+      <li><a href="urbana.html" data-es="Urbana" data-en="Urban">Urbana</a></li>
+    </ul>
+    <div class="nav-mobile-sub">
+      <a href="#about" data-es="Sobre mí" data-en="About">Sobre mí</a>
+      <a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+       - Imagen de fondo: reemplaza hero-bg con tu foto
+         Sugerencia: una de las fotos de la Torre con el sol
+       - Título principal bilingüe
+  ═══════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+
+    <div class="hero-bg" aria-hidden="true"><img src="img/DSC6260.jpg"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow"
+         data-es="A Coruña · Fotografía urbana &amp; astrofotografía"
+         data-en="A Coruña · Urban &amp; astrophotography">
+        A Coruña · Fotografía urbana &amp; astrofotografía
+      </p>
+
+      <h1 class="hero-title">
+        <!-- La frase se mantiene igual en ambos idiomas intencionalmente -->
+        Entre la<br>ciudad<br>y el <em>cosmos</em>
+      </h1>
+
+      <p class="hero-sub"
+         data-es="Capturando luz donde el faro más antiguo del mundo se encuentra con las nebulosas más lejanas del universo."
+         data-en="Capturing light where the world's oldest lighthouse meets the most distant nebulae in the universe.">
+        Capturando luz donde el faro más antiguo del mundo se encuentra con las nebulosas más lejanas del universo.
+      </p>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true"
+         data-es="Scroll" data-en="Scroll">Scroll</div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SOBRE MÍ
+       - Texto bilingüe
+       - Tarjetas de equipo (stats)
+         Modifica los datos de equipo aquí abajo
+  ═══════════════════════════════════════════ -->
+  <section class="about" id="about">
+
+    <div class="about-text-block fade-in">
+      <p class="section-label"
+         data-es="Sobre el fotógrafo"
+         data-en="About the photographer">Sobre el fotógrafo</p>
+
+      <h2 class="about-title"
+          data-es="Luz, tiempo<br>y escala"
+          data-en="Light, time<br>and scale">Luz, tiempo<br>y escala</h2>
+
+      <div class="about-body">
+        <p data-es="Fotógrafo aficionado con base en A Coruña. Trabajo en dos extremos opuestos de la escala: la intimidad de un insecto sobre un pétalo y la distancia de una nebulosa a miles de años luz."
+           data-en="Amateur photographer based in A Coruña. I work at two opposite ends of scale: the intimacy of an insect on a petal and the distance of a nebula thousands of light-years away.">
+          Fotógrafo aficionado con base en A Coruña. Trabajo en dos extremos opuestos de la escala: la intimidad de un insecto sobre un pétalo y la distancia de una nebulosa a miles de años luz.
+        </p>
+        <p data-es="La Torre de Hércules es mi referencia constante. Un punto fijo de 2.000 años de historia bajo cielos que cambian cada noche."
+           data-en="The Tower of Hercules is my constant reference. A fixed point of 2,000 years of history beneath skies that change every night.">
+          La Torre de Hércules es mi referencia constante. Un punto fijo de 2.000 años de historia bajo cielos que cambian cada noche.
+        </p>
+      </div>
+    </div>
+
+    <!-- TARJETAS DE EQUIPO
+         Añade o modifica tarjetas según tu equipo actual
+    -->
+    <div class="about-stats fade-in">
+
+      <div class="stat-card">
+        <div class="stat-number">72<span class="stat-unit">ED</span></div>
+        <div class="stat-label"
+             data-es="Skywatcher 72ED · Astrofotografía"
+             data-en="Skywatcher 72ED · Astrophotography">
+          Skywatcher 72ED · Astrofotografía
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number">a7<span class="stat-unit">IV</span></div>
+        <div class="stat-label"
+             data-es="Sony a7IV · Fotografía general"
+             data-en="Sony a7IV · General photography">
+          Sony a7IV · Fotografía general
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number">600<span class="stat-unit">mm</span></div>
+        <div class="stat-label"
+             data-es="Sony 200-600 · Torre &amp; paisaje"
+             data-en="Sony 200-600 · Tower &amp; landscape">
+          Sony 200-600 · Torre &amp; paisaje
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number">∞</div>
+        <div class="stat-label"
+             data-es="Años luz de distancia"
+             data-en="Light years away">
+          Años luz de distancia
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       GALERÍAS
+       Tarjetas que enlazan a cada página de categoría.
+       Ya no hay fotos aquí: cada categoría vive en su
+       propio archivo (astro.html, atardeceres.html, etc.)
+
+       PARA AÑADIR UNA FOTO A UNA GALERÍA:
+       edita directamente el archivo de esa categoría
+       (astro.html, atardeceres.html, macro.html o urbana.html),
+       siguiendo las instrucciones de INSTRUCCIONES.md
+  ═══════════════════════════════════════════ -->
+  <section class="galleries-section" id="gallery">
+
+    <div class="section-header fade-in">
+      <h2 class="section-title" data-es="Galería" data-en="Gallery">Galería</h2>
+      <span class="section-count" data-es="4 categorías" data-en="4 categories">4 categorías</span>
+    </div>
+
+    <div class="gallery-cards">
+
+      <a href="astro.html" class="gallery-card fade-in" style="background-image:url('img/M42.jpg')">
+        <div class="gallery-card-overlay">
+          <h3 class="gallery-card-title" data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</h3>
+          <span class="gallery-card-count" data-es="9 fotos" data-en="9 photos">9 fotos</span>
+        </div>
+      </a>
+
+      <a href="atardeceres.html" class="gallery-card fade-in" style="background-image:url('img/torre-luna-llena.jpg')">
+        <div class="gallery-card-overlay">
+          <h3 class="gallery-card-title" data-es="Torre de Hércules" data-en="Tower of Hercules">Torre de Hércules</h3>
+          <span class="gallery-card-count" data-es="8 fotos" data-en="8 photos">8 fotos</span>
+        </div>
+      </a>
+
+      <a href="macro.html" class="gallery-card fade-in" style="background-image:url('img/DSC9642.jpg')">
+        <div class="gallery-card-overlay">
+          <h3 class="gallery-card-title" data-es="Macro" data-en="Macro">Macro</h3>
+          <span class="gallery-card-count" data-es="4 fotos" data-en="4 photos">4 fotos</span>
+        </div>
+      </a>
+
+      <a href="urbana.html" class="gallery-card fade-in ph-astro-dark">
+        <div class="gallery-card-overlay">
+          <h3 class="gallery-card-title" data-es="Urbana" data-en="Urban">Urbana</h3>
+          <span class="gallery-card-count" data-es="Próximamente" data-en="Coming soon">Próximamente</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       CONTACTO
+       - Enlaces directos (email / Instagram)
+       - Formulario de solicitud de prints
+         Envía un email a jaime@jaimeg.es vía FormSubmit.co
+  ═══════════════════════════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="contact-inner fade-in">
+
+      <p class="section-label"
+         data-es="Contacto" data-en="Contact">Contacto</p>
+
+      <h2 class="contact-title"
+          data-es="Hablemos de<br>luz"
+          data-en="Let's talk<br>about light">Hablemos de<br>luz</h2>
+
+      <p class="contact-sub"
+         data-es="¿Interesado en prints, colaboraciones o proyectos fotográficos en A Coruña?"
+         data-en="Interested in prints, collaborations or photography projects in A Coruña?">
+        ¿Interesado en prints, colaboraciones o proyectos fotográficos en A Coruña?
+      </p>
+
+      <div class="contact-links">
+        <a href="mailto:jaime@jaimeg.es" class="btn btn-primary"
+           data-es="Escribir un email" data-en="Send an email">
+          Escribir un email
+        </a>
+        <a href="https://instagram.com/jaimeg95_" target="_blank" rel="noopener"
+           class="btn btn-outline">
+          @jaimeg95_
+        </a>
+      </div>
+
+    </div>
+
+    <!-- FORMULARIO DE SOLICITUD DE PRINTS
+         Servicio: FormSubmit.co (gratis, sin registro).
+         La primera vez que alguien envíe el formulario, FormSubmit
+         te mandará un email a jaime@jaimeg.es pidiéndote que actives
+         los envíos con un clic. Es un paso único.
+    -->
+    <div class="print-form-wrap fade-in" id="contact-form">
+      <h3 data-es="Solicitar un print" data-en="Request a print">Solicitar un print</h3>
+      <p class="print-form-sub"
+         data-es="Cuéntame qué foto te interesa y te responderé por email con precio, tamaños disponibles y plazos."
+         data-en="Tell me which photo you're interested in and I'll reply by email with price, available sizes and turnaround.">
+        Cuéntame qué foto te interesa y te responderé por email con precio, tamaños disponibles y plazos.
+      </p>
+
+      <!-- Mensaje de agradecimiento, oculto hasta que se envía el formulario
+           (main.js lo muestra si la URL trae ?sent=true) -->
+      <div id="print-thanks" class="print-thanks" hidden>
+        <p data-es="¡Gracias! Tu solicitud se ha enviado correctamente. Te responderé por email lo antes posible."
+           data-en="Thanks! Your request was sent successfully. I'll reply to your email as soon as possible.">
+          ¡Gracias! Tu solicitud se ha enviado correctamente. Te responderé por email lo antes posible.
+        </p>
+      </div>
+
+      <form id="print-form" class="print-form" action="https://formsubmit.co/jaime@jaimeg.es" method="POST">
+        <!-- Configuración de FormSubmit -->
+        <input type="hidden" name="_subject" value="Nueva solicitud de print — jaimeg.es">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://jaimeg.es/index.html?sent=true#contact-form">
+        <!-- Campo trampa anti-spam: debe quedar siempre vacío -->
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div class="form-row">
+          <label for="print-name" data-es="Nombre" data-en="Name">Nombre</label>
+          <input type="text" id="print-name" name="Nombre" required>
+        </div>
+
+        <div class="form-row">
+          <label for="print-email" data-es="Email" data-en="Email">Email</label>
+          <input type="email" id="print-email" name="Email" required>
+        </div>
+
+        <div class="form-row">
+          <label for="print-photo" data-es="Foto de interés" data-en="Photo of interest">Foto de interés</label>
+          <select id="print-photo" name="Foto de interés">
+            <option data-es="— Selecciona una foto (opcional) —" data-en="— Select a photo (optional) —">— Selecciona una foto (opcional) —</option>
+
+            <optgroup label="Astrofotografía" data-es-label="Astrofotografía" data-en-label="Astrophotography">
+              <option data-photo-id="ic434-horsehead" data-es="IC 434 · Cabeza de Caballo &amp; Llama" data-en="IC 434 · Horsehead &amp; Flame">IC 434 · Cabeza de Caballo &amp; Llama</option>
+              <option data-photo-id="m42-orion" data-es="M42 · Gran Nebulosa de Orión" data-en="M42 · Great Orion Nebula">M42 · Gran Nebulosa de Orión</option>
+              <option data-photo-id="ngc6960-veil" data-es="NGC 6960 · Nebulosa del Velo Occidental" data-en="NGC 6960 · Western Veil Nebula">NGC 6960 · Nebulosa del Velo Occidental</option>
+              <option data-photo-id="ngc2244-rosette" data-es="NGC 2244 · Nebulosa de la Roseta" data-en="NGC 2244 · Rosette Nebula">NGC 2244 · Nebulosa de la Roseta</option>
+              <option data-photo-id="ngc2264-christmas-tree" data-es="NGC 2264 · Árbol de Navidad &amp; Cono" data-en="NGC 2264 · Christmas Tree &amp; Cone">NGC 2264 · Árbol de Navidad &amp; Cono</option>
+              <option data-photo-id="m31-andromeda" data-es="M31 · Galaxia de Andrómeda" data-en="M31 · Andromeda Galaxy">M31 · Galaxia de Andrómeda</option>
+              <option data-photo-id="m33-triangulum" data-es="M33 · Galaxia del Triángulo" data-en="M33 · Triangulum Galaxy">M33 · Galaxia del Triángulo</option>
+              <option data-photo-id="ngc2175-monkey-head" data-es="NGC 2175 · Nebulosa Cabeza de Mono" data-en="NGC 2175 · Monkey Head Nebula">NGC 2175 · Nebulosa Cabeza de Mono</option>
+              <option data-photo-id="ic443-jellyfish" data-es="IC 443 · Nebulosa de la Medusa" data-en="IC 443 · Jellyfish Nebula">IC 443 · Nebulosa de la Medusa</option>
+            </optgroup>
+
+            <optgroup label="Torre de Hércules" data-es-label="Torre de Hércules" data-en-label="Tower of Hercules">
+              <option data-photo-id="torre-canide-sol-poniente" data-es="Torre de Hércules · Sol poniente" data-en="Tower of Hercules · Sunset">Torre de Hércules · Sol poniente</option>
+              <option data-photo-id="torre-mera-sol-rojo" data-es="Torre de Hércules · Sol rojo" data-en="Tower of Hercules · Red sun">Torre de Hércules · Sol rojo</option>
+              <option data-photo-id="torre-mera-ocaso-simetrico" data-es="Torre de Hércules · Ocaso simétrico" data-en="Tower of Hercules · Symmetric sunset">Torre de Hércules · Ocaso simétrico</option>
+              <option data-photo-id="torre-mera-alineacion" data-es="Torre de Hércules · Alineación desde el Faro de Mera" data-en="Tower of Hercules · Alignment from the Mera Lighthouse">Torre de Hércules · Alineación desde el Faro de Mera</option>
+              <option data-photo-id="torre-alineacion-solar" data-es="Torre de Hércules · Alineación solar" data-en="Tower of Hercules · Sun alignment">Torre de Hércules · Alineación solar</option>
+              <option data-photo-id="torre-atardecer-bahia" data-es="Torre de Hércules · Atardecer sobre la bahía" data-en="Tower of Hercules · Sunset over the bay">Torre de Hércules · Atardecer sobre la bahía</option>
+              <option data-photo-id="torre-tormenta" data-es="Torre de Hércules · Tormenta eléctrica" data-en="Tower of Hercules · Electric storm">Torre de Hércules · Tormenta eléctrica</option>
+              <option data-photo-id="torre-luna-llena" data-es="Torre de Hércules · Luna llena" data-en="Tower of Hercules · Full moon">Torre de Hércules · Luna llena</option>
+            </optgroup>
+
+            <optgroup label="Macro" data-es-label="Macro" data-en-label="Macro">
+              <option data-photo-id="geranio" data-es="Geranio" data-en="Geranium">Geranio</option>
+              <option data-photo-id="liquenes" data-es="Líquenes" data-en="Lichen">Líquenes</option>
+              <option data-photo-id="mosca-hoja" data-es="Mosca sobre hoja" data-en="Fly on a leaf">Mosca sobre hoja</option>
+              <option data-photo-id="abeja-alstroemeria" data-es="Abeja en Alstroemeria" data-en="Bee on Alstroemeria">Abeja en Alstroemeria</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="print-message" data-es="Mensaje" data-en="Message">Mensaje</label>
+          <textarea id="print-message" name="Mensaje" rows="4"
+                     data-es-placeholder="Tamaño deseado, cantidad, dirección de envío..."
+                     data-en-placeholder="Desired size, quantity, shipping address..."
+                     placeholder="Tamaño deseado, cantidad, dirección de envío..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" data-es="Enviar solicitud" data-en="Send request">
+          Enviar solicitud
+        </button>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer>
+    <p>© <span id="footer-year"></span> Jaime García ·
+      <span data-es="Todos los derechos reservados"
+            data-en="All rights reserved">Todos los derechos reservados</span>
+    </p>
+    <a href="https://instagram.com/jaimeg95_" target="_blank" rel="noopener">@jaimeg95_</a>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════
+       SCRIPTS
+       Orden importante: primero lang.js, luego main.js
+       (gallery.js no hace falta aquí: la galería con lightbox
+       vive en las páginas de cada categoría)
+  ═══════════════════════════════════════════ -->
+  <script src="js/lang.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
