@@ -427,11 +427,7 @@ ul { list-style: none; }
   overflow: hidden;
 }
 
-/* IMAGEN DE FONDO DEL HERO
-   Sustituye el gradiente por tu imagen real:
-   background-image: url('../img/hero.jpg');
-   La imagen ideal es la Torre con el sol rojo centrado (IMG_4770)
-*/
+/* Imagen de fondo del hero, con gradiente de contraste por encima. */
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -1282,4 +1278,105 @@ footer a:hover {
     gap: 10px;
     text-align: center;
   }
+}
+
+
+/* Ajustes de la revisión: más orientación en portada y galerías con ritmo editorial. */
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 48%;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  align-items: center;
+  margin-top: 26px;
+}
+
+.hero-action {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 0 17px;
+  border: 1px solid var(--accent);
+  color: var(--text);
+  font-size: 10px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.hero-action:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.hero-action-secondary {
+  border-color: transparent;
+  color: var(--text-muted);
+  padding-left: 0;
+}
+
+.hero-action-secondary:hover {
+  background: transparent;
+  border-color: transparent;
+  color: var(--text);
+}
+
+/* Dos columnas en escritorio: el espacio en blanco acompaña la proporción real. */
+.gallery-grid {
+  display: block;
+  column-count: 2;
+  column-gap: 24px;
+  max-width: 1120px;
+}
+
+.gallery-item {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 24px;
+  break-inside: avoid;
+  vertical-align: top;
+}
+
+.gallery-placeholder,
+.gallery-placeholder.ratio-tall,
+.gallery-placeholder.ratio-ultra-tall,
+.gallery-placeholder.ratio-wide,
+.gallery-placeholder.ratio-square {
+  aspect-ratio: auto;
+  overflow: hidden;
+}
+
+.gallery-placeholder img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.stat-card {
+  padding: 26px;
+}
+
+@media (max-width: 700px) {
+  .gallery-grid {
+    column-count: 1;
+    column-gap: 0;
+  }
+
+  .gallery-item {
+    margin-bottom: 20px;
+  }
+
+  .hero-actions {
+    gap: 8px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-action { transition: none; }
 }
