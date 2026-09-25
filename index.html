@@ -52,7 +52,7 @@
           <a href="#gallery" class="nav-dropdown-toggle" data-es="Galería" data-en="Gallery">Galería</a>
           <ul class="nav-dropdown-menu">
             <li><a href="astro.html" data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</a></li>
-            <li><a href="atardeceres.html" data-es="Torre de Hércules" data-en="Tower of Hercules">Torre de Hércules</a></li>
+            <li><a href="atardeceres.html" data-es="Alineaciones" data-en="Alignments">Alineaciones</a></li>
             <li><a href="macro.html" data-es="Macro" data-en="Macro">Macro</a></li>
             <li><a href="urbana.html" data-es="Urbana" data-en="Urban">Urbana</a></li>
           </ul>
@@ -81,7 +81,7 @@
     <ul class="nav-mobile-links">
       <li><a href="#hero" data-es="Inicio" data-en="Home">Inicio</a></li>
       <li><a href="astro.html" data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</a></li>
-      <li><a href="atardeceres.html" data-es="Torre de Hércules" data-en="Tower of Hercules">Torre de Hércules</a></li>
+      <li><a href="atardeceres.html" data-es="Alineaciones" data-en="Alignments">Alineaciones</a></li>
       <li><a href="macro.html" data-es="Macro" data-en="Macro">Macro</a></li>
       <li><a href="urbana.html" data-es="Urbana" data-en="Urban">Urbana</a></li>
     </ul>
@@ -100,7 +100,7 @@
   ═══════════════════════════════════════════ -->
   <section class="hero" id="hero">
 
-    <div class="hero-bg" aria-hidden="true"><img src="img/DSC6260.jpg"></div>
+    <div class="hero-bg" aria-hidden="true"><img src="img/optimizadas/DSC6260.jpg" alt="" fetchpriority="high" decoding="async"></div>
     <div class="hero-overlay" aria-hidden="true"></div>
 
     <div class="hero-content">
@@ -120,6 +120,10 @@
          data-en="Capturing light where the world's oldest lighthouse meets the most distant nebulae in the universe.">
         Capturando luz donde el faro más antiguo del mundo se encuentra con las nebulosas más lejanas del universo.
       </p>
+      <div class="hero-actions">
+        <a class="hero-action" href="#gallery" data-es="Explorar fotografías" data-en="Explore photographs">Explorar fotografías</a>
+        <a class="hero-action hero-action-secondary" href="#about" data-es="Conocer al fotógrafo" data-en="Meet the photographer">Conocer al fotógrafo</a>
+      </div>
     </div>
 
     <div class="hero-scroll" aria-hidden="true"
@@ -210,7 +214,7 @@
        PARA AÑADIR UNA FOTO A UNA GALERÍA:
        edita directamente el archivo de esa categoría
        (astro.html, atardeceres.html, macro.html o urbana.html),
-       siguiendo las instrucciones de INSTRUCCIONES.md
+       editando el archivo de la categoría correspondiente
   ═══════════════════════════════════════════ -->
   <section class="galleries-section" id="gallery">
 
@@ -221,21 +225,21 @@
 
     <div class="gallery-cards">
 
-      <a href="astro.html" class="gallery-card fade-in" style="background-image:url('img/M42.jpg')">
+      <a href="astro.html" class="gallery-card fade-in" style="background-image:url('img/optimizadas/M42.jpg')">
         <div class="gallery-card-overlay">
           <h3 class="gallery-card-title" data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</h3>
           <span class="gallery-card-count" data-es="9 fotos" data-en="9 photos">9 fotos</span>
         </div>
       </a>
 
-      <a href="atardeceres.html" class="gallery-card fade-in" style="background-image:url('img/torre-luna-llena.jpg')">
+      <a href="atardeceres.html" class="gallery-card fade-in" style="background-image:url('img/optimizadas/torre-luna-llena.jpg')">
         <div class="gallery-card-overlay">
-          <h3 class="gallery-card-title" data-es="Torre de Hércules" data-en="Tower of Hercules">Torre de Hércules</h3>
+          <h3 class="gallery-card-title" data-es="Alineaciones" data-en="Alignments">Alineaciones</h3>
           <span class="gallery-card-count" data-es="8 fotos" data-en="8 photos">8 fotos</span>
         </div>
       </a>
 
-      <a href="macro.html" class="gallery-card fade-in" style="background-image:url('img/DSC9642.jpg')">
+      <a href="macro.html" class="gallery-card fade-in" style="background-image:url('img/optimizadas/DSC9642.jpg')">
         <div class="gallery-card-overlay">
           <h3 class="gallery-card-title" data-es="Macro" data-en="Macro">Macro</h3>
           <span class="gallery-card-count" data-es="4 fotos" data-en="4 photos">4 fotos</span>
@@ -245,7 +249,7 @@
       <a href="urbana.html" class="gallery-card fade-in ph-astro-dark">
         <div class="gallery-card-overlay">
           <h3 class="gallery-card-title" data-es="Urbana" data-en="Urban">Urbana</h3>
-          <span class="gallery-card-count" data-es="Próximamente" data-en="Coming soon">Próximamente</span>
+          <span class="gallery-card-count" data-es="En preparación" data-en="In progress">En preparación</span>
         </div>
       </a>
 
@@ -346,7 +350,7 @@
               <option data-photo-id="ic443-jellyfish" data-es="IC 443 · Nebulosa de la Medusa" data-en="IC 443 · Jellyfish Nebula">IC 443 · Nebulosa de la Medusa</option>
             </optgroup>
 
-            <optgroup label="Torre de Hércules" data-es-label="Torre de Hércules" data-en-label="Tower of Hercules">
+            <optgroup label="Alineaciones" data-es-label="Alineaciones" data-en-label="Alignments">
               <option data-photo-id="torre-canide-sol-poniente" data-es="Torre de Hércules · Sol poniente" data-en="Tower of Hercules · Sunset">Torre de Hércules · Sol poniente</option>
               <option data-photo-id="torre-mera-sol-rojo" data-es="Torre de Hércules · Sol rojo" data-en="Tower of Hercules · Red sun">Torre de Hércules · Sol rojo</option>
               <option data-photo-id="torre-mera-ocaso-simetrico" data-es="Torre de Hércules · Ocaso simétrico" data-en="Tower of Hercules · Symmetric sunset">Torre de Hércules · Ocaso simétrico</option>
