@@ -64,16 +64,20 @@ function openLightbox(item) {
   const phEl       = document.getElementById('lightbox-ph');
   const requestBtn = document.getElementById('lightbox-request');
 
-  /* Título y subtítulo desde los atributos data del item */
-  const title  = item.dataset.title || '';
-  const sub    = item.dataset.sub   || '';
-  const cat    = item.dataset.cat   || '';
-  const gear   = GEAR_BY_CATEGORY[cat] || '';
+  /* Idioma actual, usado para elegir las variantes en inglés cuando existen */
+  const lang = window.currentLang || 'es';
+
+  /* Título y subtítulo desde los atributos data del item.
+     data-title-en / data-sub-en son opcionales: si una foto no los lleva,
+     se usa el texto en español como respaldo. */
+  const title = (lang === 'en' ? item.dataset.titleEn : item.dataset.title) || item.dataset.title || '';
+  const sub   = (lang === 'en' ? item.dataset.subEn   : item.dataset.sub)   || item.dataset.sub   || '';
+  const cat   = item.dataset.cat || '';
+  const gear  = GEAR_BY_CATEGORY[cat] || '';
 
   /* Descripción del objeto (bilingüe): data-desc-es / data-desc-en.
      Solo las fotos de astro la llevan por ahora; el resto de categorías
      simplemente no muestran este párrafo. */
-  const lang = window.currentLang || 'es';
   const desc = (lang === 'en' ? item.dataset.descEn : item.dataset.descEs) || '';
 
   titleEl.innerHTML = title;

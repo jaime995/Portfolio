@@ -6,6 +6,8 @@
    - setLang(lang) recorre todos esos elementos y aplica el texto correcto
    - El idioma activo se guarda en window.currentLang para que gallery.js
      pueda acceder al texto correcto del equipo
+   - El idioma elegido se guarda en localStorage para que se mantenga
+     al navegar entre páginas (index.html, astro.html, etc.)
 ═══════════════════════════════════════════════════════════════ */
 
 window.currentLang = 'es';
@@ -55,4 +57,24 @@ function setLang(lang) {
   if (typeof updateGalleryCount === 'function') {
     updateGalleryCount();
   }
+
+  /* ── Recordar el idioma elegido para las siguientes páginas ── */
+  try {
+    localStorage.setItem('lang', lang);
+  } catch (e) {
+    /* localStorage puede no estar disponible (modo privado, etc.) */
+  }
 }
+
+/* ── Al cargar cualquier página, aplicar el último idioma guardado ── */
+document.addEventListener('DOMContentLoaded', () => {
+  let saved = 'es';
+  try {
+    saved = localStorage.getItem('lang') || 'es';
+  } catch (e) {
+    saved = 'es';
+  }
+  if (saved === 'en') {
+    setLang('en');
+  }
+});
