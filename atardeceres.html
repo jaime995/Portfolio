@@ -10,11 +10,11 @@
   <!-- ═══════════════════════════════════════════
        FAVICON
   ═══════════════════════════════════════════ -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+  <link rel="manifest" href="icons/site.webmanifest">
   <meta name="theme-color" content="#0a0a0a">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,7 +39,6 @@
             <li><a href="astro.html" data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</a></li>
             <li><a href="atardeceres.html" data-es="Alineaciones" data-en="Alignments">Alineaciones</a></li>
             <li><a href="macro.html" data-es="Macro" data-en="Macro">Macro</a></li>
-            <li><a href="urbana.html" data-es="Urbana" data-en="Urban">Urbana</a></li>
           </ul>
         </li>
         <li><a href="index.html#about"    data-es="Sobre mí"  data-en="About">Sobre mí</a></li>
@@ -65,7 +64,6 @@
       <li><a href="astro.html" data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</a></li>
       <li><a href="atardeceres.html" data-es="Alineaciones" data-en="Alignments">Alineaciones</a></li>
       <li><a href="macro.html" data-es="Macro" data-en="Macro">Macro</a></li>
-      <li><a href="urbana.html" data-es="Urbana" data-en="Urban">Urbana</a></li>
     </ul>
     <div class="nav-mobile-sub">
       <a href="index.html#about" data-es="Sobre mí" data-en="About">Sobre mí</a>
@@ -106,7 +104,9 @@
            data-cat="sunset"
            data-photo-id="torre-canide-sol-poniente"
            data-title="Torre de Hércules · Sol poniente"
+           data-title-en="Tower of Hercules · Setting sun"
            data-sub="Sol poniente · Canide · A Coruña"
+           data-sub-en="Setting sun · Canide · A Coruña"
            onclick="openLightbox(this)">
         <div class="gallery-placeholder ratio-wide ph-sun-orange">
           <img src="img/DSC6260.jpg" alt="Torre de Hércules al atardecer" loading="lazy" decoding="async">
@@ -114,7 +114,7 @@
         <div class="gallery-overlay">
           <div class="gallery-caption">
             <small data-es="Atardecer" data-en="Sunset">Atardecer</small>
-            Torre de Hércules · Sol poniente
+            <span data-es="Torre de Hércules · Sol poniente" data-en="Tower of Hercules · Setting sun">Torre de Hércules · Sol poniente</span>
           </div>
         </div>
       </div>
@@ -123,7 +123,9 @@
            data-cat="sunset"
            data-photo-id="torre-mera-sol-rojo"
            data-title="Torre de Hércules · Sol rojo"
+           data-title-en="Tower of Hercules · Red sun"
            data-sub="Sol rojo · Faro de Mera · A Coruña"
+           data-sub-en="Red sun · Mera Lighthouse · A Coruña"
            onclick="openLightbox(this)">
         <div class="gallery-placeholder ratio-ultra-tall ph-sun-red">
           <img src="img/DSC5014.jpg" alt="Torre de Hércules sol rojo" loading="lazy" decoding="async">
@@ -131,7 +133,7 @@
         <div class="gallery-overlay">
           <div class="gallery-caption">
             <small data-es="Atardecer" data-en="Sunset">Atardecer</small>
-            Torre de Hércules · Sol rojo
+            <span data-es="Torre de Hércules · Sol rojo" data-en="Tower of Hercules · Red sun">Torre de Hércules · Sol rojo</span>
           </div>
         </div>
       </div>
@@ -140,7 +142,9 @@
            data-cat="sunset"
            data-photo-id="torre-mera-ocaso-simetrico"
            data-title="Torre de Hércules · Ocaso simétrico"
+           data-title-en="Tower of Hercules · Symmetric sunset"
            data-sub="Ocaso simétrico · Mera · A Coruña"
+           data-sub-en="Symmetric sunset · Mera · A Coruña"
            onclick="openLightbox(this)">
         <div class="gallery-placeholder ratio-tall ph-sun-orange">
           <img src="img/DSC5587.jpg" alt="Torre de Hércules ocaso simétrico" loading="lazy" decoding="async">
@@ -148,7 +152,7 @@
         <div class="gallery-overlay">
           <div class="gallery-caption">
             <small data-es="Atardecer" data-en="Sunset">Atardecer</small>
-            Torre de Hércules · Ocaso simétrico
+            <span data-es="Torre de Hércules · Ocaso simétrico" data-en="Tower of Hercules · Symmetric sunset">Torre de Hércules · Ocaso simétrico</span>
           </div>
         </div>
       </div>
@@ -157,7 +161,9 @@
            data-cat="sunset"
            data-photo-id="faro-mera-alineacion"
            data-title="Faro de Mera · Alineación con la puesta de sol"
+           data-title-en="Mera Lighthouse · Alignment with the sunset"
            data-sub="Faro de Mera · A Coruña"
+           data-sub-en="Mera Lighthouse · A Coruña"
            onclick="openLightbox(this)">
         <div class="gallery-placeholder ratio-wide ph-sun-orange">
           <img src="img/torre-halo-solar.jpg" alt="Alineación de la puesta de sol con el Faro de Mera" loading="lazy" decoding="async">
@@ -165,7 +171,7 @@
         <div class="gallery-overlay">
           <div class="gallery-caption">
             <small data-es="Atardecer" data-en="Sunset">Atardecer</small>
-            Faro de Mera · Alineación
+            <span data-es="Faro de Mera · Alineación" data-en="Mera Lighthouse · Alignment">Faro de Mera · Alineación</span>
           </div>
         </div>
       </div>
@@ -174,7 +180,9 @@
            data-cat="sunset"
            data-photo-id="torre-alineacion-solar"
            data-title="Torre de Hércules · Alineación solar"
+           data-title-en="Tower of Hercules · Solar alignment"
            data-sub="Sol tras la Torre · A Coruña"
+           data-sub-en="Sun behind the Tower · A Coruña"
            onclick="openLightbox(this)">
         <div class="gallery-placeholder ratio-wide ph-sun-orange">
           <img src="img/torre-alineacion-solar.jpg" alt="Sol alineado detrás de la Torre de Hércules" loading="lazy" decoding="async">
@@ -182,7 +190,7 @@
         <div class="gallery-overlay">
           <div class="gallery-caption">
             <small data-es="Atardecer" data-en="Sunset">Atardecer</small>
-            Torre de Hércules · Alineación solar
+            <span data-es="Torre de Hércules · Alineación solar" data-en="Tower of Hercules · Solar alignment">Torre de Hércules · Alineación solar</span>
           </div>
         </div>
       </div>
@@ -191,7 +199,9 @@
            data-cat="sunset"
            data-photo-id="torre-atardecer-bahia"
            data-title="Torre de Hércules · Atardecer sobre la bahía"
+           data-title-en="Tower of Hercules · Sunset over the bay"
            data-sub="Skyline y bahía de A Coruña"
+           data-sub-en="Skyline and bay of A Coruña"
            onclick="openLightbox(this)">
         <div class="gallery-placeholder ratio-wide ph-sun-orange">
           <img src="img/torre-atardecer-bahia.jpg" alt="Atardecer sobre la bahía de A Coruña con la Torre de Hércules" loading="lazy" decoding="async">
@@ -199,7 +209,7 @@
         <div class="gallery-overlay">
           <div class="gallery-caption">
             <small data-es="Atardecer" data-en="Sunset">Atardecer</small>
-            Torre de Hércules · Atardecer sobre la bahía
+            <span data-es="Torre de Hércules · Atardecer sobre la bahía" data-en="Tower of Hercules · Sunset over the bay">Torre de Hércules · Atardecer sobre la bahía</span>
           </div>
         </div>
       </div>
@@ -208,7 +218,9 @@
            data-cat="sunset"
            data-photo-id="torre-tormenta"
            data-title="Torre de Hércules · Tormenta eléctrica"
+           data-title-en="Tower of Hercules · Thunderstorm"
            data-sub="Tormenta eléctrica nocturna · A Coruña"
+           data-sub-en="Nighttime thunderstorm · A Coruña"
            onclick="openLightbox(this)">
         <div class="gallery-placeholder ratio-wide ph-astro-blue">
           <img src="img/torre-tormenta.jpg" alt="Tormenta eléctrica sobre la Torre de Hércules" loading="lazy" decoding="async">
@@ -216,7 +228,7 @@
         <div class="gallery-overlay">
           <div class="gallery-caption">
             <small data-es="Tormenta" data-en="Storm">Tormenta</small>
-            Torre de Hércules · Tormenta eléctrica
+            <span data-es="Torre de Hércules · Tormenta eléctrica" data-en="Tower of Hercules · Thunderstorm">Torre de Hércules · Tormenta eléctrica</span>
           </div>
         </div>
       </div>
@@ -225,7 +237,9 @@
            data-cat="sunset"
            data-photo-id="torre-luna"
            data-title="Torre de Hércules · Luna"
+           data-title-en="Tower of Hercules · Moon"
            data-sub="Luna tras la Torre · A Coruña"
+           data-sub-en="Moon behind the Tower · A Coruña"
            onclick="openLightbox(this)">
         <div class="gallery-placeholder ratio-tall ph-astro-dark">
           <img src="img/torre-luna-llena.jpg" alt="Luna saliendo tras la Torre de Hércules" loading="lazy" decoding="async">
@@ -233,7 +247,7 @@
         <div class="gallery-overlay">
           <div class="gallery-caption">
             <small data-es="Luna" data-en="Moon">Luna</small>
-            Torre de Hércules · Luna
+            <span data-es="Torre de Hércules · Luna" data-en="Tower of Hercules · Moon">Torre de Hércules · Luna</span>
           </div>
         </div>
       </div>

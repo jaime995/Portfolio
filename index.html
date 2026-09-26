@@ -10,11 +10,11 @@
   <!-- ═══════════════════════════════════════════
        FAVICON
   ═══════════════════════════════════════════ -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+  <link rel="manifest" href="icons/site.webmanifest">
   <meta name="theme-color" content="#0a0a0a">
 
   <!-- ═══════════════════════════════════════════
@@ -41,7 +41,7 @@
        - Toggle de idioma ES / EN
 
        Esta misma barra de navegación se repite en astro.html,
-       atardeceres.html, macro.html y urbana.html.
+       atardeceres.html y macro.html.
   ═══════════════════════════════════════════ -->
   <nav id="nav">
     <a href="index.html" class="nav-logo">Jaime García<span class="nav-logo-dot">.</span></a>
@@ -54,7 +54,6 @@
             <li><a href="astro.html" data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</a></li>
             <li><a href="atardeceres.html" data-es="Alineaciones" data-en="Alignments">Alineaciones</a></li>
             <li><a href="macro.html" data-es="Macro" data-en="Macro">Macro</a></li>
-            <li><a href="urbana.html" data-es="Urbana" data-en="Urban">Urbana</a></li>
           </ul>
         </li>
         <li><a href="#about"    data-es="Sobre mí"  data-en="About">Sobre mí</a></li>
@@ -74,7 +73,7 @@
 
   <!-- Menú de navegación a pantalla completa en móvil.
        Se abre/cierra desde js/main.js. Se repite igual en
-       astro.html, atardeceres.html, macro.html y urbana.html
+       astro.html, atardeceres.html y macro.html
        (solo cambian los enlaces relativos). -->
   <div class="nav-mobile-menu" id="nav-mobile-menu">
     <button class="nav-mobile-close" id="nav-mobile-close" aria-label="Cerrar menú">×</button>
@@ -83,7 +82,6 @@
       <li><a href="astro.html" data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</a></li>
       <li><a href="atardeceres.html" data-es="Alineaciones" data-en="Alignments">Alineaciones</a></li>
       <li><a href="macro.html" data-es="Macro" data-en="Macro">Macro</a></li>
-      <li><a href="urbana.html" data-es="Urbana" data-en="Urban">Urbana</a></li>
     </ul>
     <div class="nav-mobile-sub">
       <a href="#about" data-es="Sobre mí" data-en="About">Sobre mí</a>
@@ -110,8 +108,9 @@
         A Coruña · Fotografía urbana &amp; astrofotografía
       </p>
 
-      <h1 class="hero-title">
-        <!-- La frase se mantiene igual en ambos idiomas intencionalmente -->
+      <h1 class="hero-title"
+          data-es="Entre la<br>ciudad<br>y el <em>cosmos</em>"
+          data-en="Between<br>the city<br>and the <em>cosmos</em>">
         Entre la<br>ciudad<br>y el <em>cosmos</em>
       </h1>
 
@@ -120,6 +119,7 @@
          data-en="Capturing light where the world's oldest lighthouse meets the most distant nebulae in the universe.">
         Capturando luz donde el faro más antiguo del mundo se encuentra con las nebulosas más lejanas del universo.
       </p>
+
       <div class="hero-actions">
         <a class="hero-action" href="#gallery" data-es="Explorar fotografías" data-en="Explore photographs">Explorar fotografías</a>
         <a class="hero-action hero-action-secondary" href="#about" data-es="Conocer al fotógrafo" data-en="Meet the photographer">Conocer al fotógrafo</a>
@@ -213,14 +213,14 @@
 
        PARA AÑADIR UNA FOTO A UNA GALERÍA:
        edita directamente el archivo de esa categoría
-       (astro.html, atardeceres.html, macro.html o urbana.html),
-       editando el archivo de la categoría correspondiente
+       (astro.html, atardeceres.html o macro.html),
+       siguiendo las instrucciones de INSTRUCCIONES.md
   ═══════════════════════════════════════════ -->
   <section class="galleries-section" id="gallery">
 
     <div class="section-header fade-in">
       <h2 class="section-title" data-es="Galería" data-en="Gallery">Galería</h2>
-      <span class="section-count" data-es="4 categorías" data-en="4 categories">4 categorías</span>
+      <span class="section-count" data-es="3 categorías" data-en="3 categories">3 categorías</span>
     </div>
 
     <div class="gallery-cards">
@@ -243,13 +243,6 @@
         <div class="gallery-card-overlay">
           <h3 class="gallery-card-title" data-es="Macro" data-en="Macro">Macro</h3>
           <span class="gallery-card-count" data-es="4 fotos" data-en="4 photos">4 fotos</span>
-        </div>
-      </a>
-
-      <a href="urbana.html" class="gallery-card fade-in ph-astro-dark">
-        <div class="gallery-card-overlay">
-          <h3 class="gallery-card-title" data-es="Urbana" data-en="Urban">Urbana</h3>
-          <span class="gallery-card-count" data-es="En preparación" data-en="In progress">En preparación</span>
         </div>
       </a>
 
