@@ -936,136 +936,122 @@ ul { list-style: none; }
 
 
 /* ─────────────────────────────────────────
-   11. LIGHTBOX
+   11. LIGHTBOX (PhotoSwipe v5, vía CDN — ver js/pswp-init.js)
+   PhotoSwipe aporta el fondo, el zoom/pinch, el swipe y el cierre;
+   aquí solo ajustamos su fondo al tema oscuro de la web y damos
+   estilo a la caption propia (título, sub, descripción, equipo y
+   el botón "Solicitar este print") que construye pswp-init.js.
 ───────────────────────────────────────────── */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-  background: rgba(10, 10, 10, 0.97);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--transition-medium);
+.pswp {
+  --pswp-icon-color: var(--text);
+  --pswp-icon-color-secondary: var(--text-dim);
 }
 
-.lightbox.open {
-  opacity: 1;
-  pointer-events: all;
+.pswp__bg {
+  background: #0a0a0a;
 }
 
-.lightbox-close {
-  position: absolute;
-  top: 24px;
-  right: 32px;
-  background: none;
-  border: none;
+/* Contador "X / Y" — viene incluido de serie en PhotoSwipe v5,
+   aquí solo lo tintamos para que combine con el resto del tema. */
+.pswp__counter {
   color: var(--text-muted);
-  font-size: 32px;
-  line-height: 1;
-  transition: color var(--transition-fast);
-  z-index: 201;
-}
-
-.lightbox-close:hover {
-  color: var(--text);
-}
-
-/* El contenido del lightbox reserva el 92% de la altura de la pantalla.
-   Es una columna: arriba la imagen (que se reparte todo el espacio
-   sobrante) y abajo, siempre debajo y sin solaparse, el bloque de texto.
-   Si en pantallas pequeñas no cupiera todo, el propio contenedor
-   permite scroll en vez de solapar contenido. */
-.lightbox-content {
-  width: 100%;
-  max-width: 1100px;
-  height: 92vh;
-  max-height: 92vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 0 24px;
-  overflow-y: auto;
-}
-
-/* Caja de la imagen (o del placeholder): ocupa todo el espacio
-   vertical que le deja el bloque de texto de abajo */
-.lightbox-ph {
-  width: 100%;
-  flex: 1 1 auto;
-  min-height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-dim);
+  font-family: var(--font-body);
   font-size: 12px;
-  letter-spacing: 0.1em;
-  border: 1px solid var(--border);
-  background: var(--surface);
-}
-
-/* Imagen real en el lightbox — usa al máximo el espacio disponible
-   dentro de .lightbox-ph, nunca más */
-.lightbox-content img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  display: block;
-}
-
-/* Información bajo la imagen — altura fija según su contenido,
-   nunca se superpone a la foto */
-.lightbox-info {
-  flex: 0 0 auto;
-  width: 100%;
-  max-width: 640px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding-bottom: 8px;
-}
-
-.lightbox-info h3 {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 300;
-}
-
-.lightbox-info p {
-  font-size: 12px;
-  color: var(--text-muted);
   letter-spacing: 0.04em;
 }
 
-/* Descripción del objeto astronómico (fotos de astro) */
-.lightbox-desc {
-  max-width: 480px;
-  color: var(--text-muted) !important;
-  font-size: 12.5px !important;
-  line-height: 1.7;
-  letter-spacing: 0.02em !important;
-  margin: 6px auto 0;
+/* Caption propia, anclada a la parte inferior del lightbox.
+   Colapsada por defecto (solo título), se expande al tocarla para
+   no tapar la foto ni interferir con el swipe en móvil. */
+.pswp-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  max-height: 40%;
+  overflow-y: auto;
+  padding: 16px 20px calc(16px + env(safe-area-inset-bottom, 0px));
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.92) 60%, transparent);
+  text-align: center;
+  cursor: pointer;
 }
 
-.lightbox-desc[hidden] {
+.pswp-caption-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--text);
+  margin: 0;
+}
+
+.pswp-caption-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin: 4px 0 0;
+}
+
+/* Descripción, equipo y botón de print: ocultos hasta que se toca
+   la caption (o siempre visibles en pantallas suficientemente altas) */
+.pswp-caption-desc,
+.pswp-caption-gear,
+.pswp-caption-request {
   display: none;
 }
 
-/* Línea de equipo técnico — en color acento */
-.lightbox-gear {
-  color: var(--accent) !important;
-  font-size: 11px !important;
-  letter-spacing: 0.06em !important;
+.pswp-caption-expanded .pswp-caption-desc,
+.pswp-caption-expanded .pswp-caption-gear,
+.pswp-caption-expanded .pswp-caption-request {
+  display: block;
 }
 
-.lightbox-request {
-  margin-top: 8px;
+.pswp-caption-desc {
+  max-width: 480px;
+  margin: 10px auto 0;
+  color: var(--text-muted);
+  font-size: 12.5px;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+
+.pswp-caption-gear {
+  margin: 8px 0 0;
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+.pswp-caption-request {
+  margin: 12px auto 0;
+  padding: 10px 20px;
+  border: 1px solid var(--accent);
+  color: var(--text);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.pswp-caption-request:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* En pantallas más altas que anchas (móvil, la prioridad táctil del
+   spec) dejamos la caption bien compacta; en escritorio hay margen
+   de sobra así que mostramos siempre desc/equipo/print sin necesidad
+   de tocar. */
+@media (min-width: 900px) {
+  .pswp-caption-desc,
+  .pswp-caption-gear,
+  .pswp-caption-request {
+    display: block;
+  }
+  .pswp-caption {
+    cursor: default;
+    max-height: 34%;
+  }
 }
 
 

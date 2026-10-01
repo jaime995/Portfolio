@@ -21,6 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5/dist/photoswipe.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -106,76 +107,76 @@
            data-title="Geranio"
            data-title-en="Geranium"
            data-sub="Pelargonium · A Coruña"
-           data-sub-en="Pelargonium · A Coruña"
-           onclick="openLightbox(this)">
-        <div class="gallery-placeholder ratio-tall ph-macro-red">
-          <img src="img/DSC9642.jpg" alt="Geranio rojo macro" loading="lazy" decoding="async">
-        </div>
+           data-sub-en="Pelargonium · A Coruña">
+        <a class="pswp-item" href="img/DSC9642.jpg" data-pswp-width="4672" data-pswp-height="7008">
+          <div class="gallery-placeholder ratio-tall ph-macro-red">
+            <img src="img/DSC9642.jpg" alt="Geranio rojo macro" loading="lazy" decoding="async">
+          </div>
         <div class="gallery-overlay">
           <div class="gallery-caption">
             <small data-es="Macro" data-en="Macro">Macro</small>
             <span data-es="Geranio" data-en="Geranium">Geranio</span>
           </div>
         </div>
+        </a>
       </div>
-
       <div class="gallery-item"
            data-cat="macro"
            data-photo-id="liquenes"
            data-title="Líquenes"
            data-title-en="Lichens"
            data-sub="Parmotrema · A Coruña"
-           data-sub-en="Parmotrema · A Coruña"
-           onclick="openLightbox(this)">
-        <div class="gallery-placeholder ratio-wide ph-macro-green">
-          <img src="img/DSC9627.jpg" alt="Líquenes macro" loading="lazy" decoding="async">
-        </div>
+           data-sub-en="Parmotrema · A Coruña">
+        <a class="pswp-item" href="img/DSC9627.jpg" data-pswp-width="7008" data-pswp-height="4672">
+          <div class="gallery-placeholder ratio-wide ph-macro-green">
+            <img src="img/DSC9627.jpg" alt="Líquenes macro" loading="lazy" decoding="async">
+          </div>
         <div class="gallery-overlay">
           <div class="gallery-caption">
             <small data-es="Macro" data-en="Macro">Macro</small>
             <span data-es="Líquenes" data-en="Lichens">Líquenes</span>
           </div>
         </div>
+        </a>
       </div>
-
       <div class="gallery-item"
            data-cat="macro"
            data-photo-id="mosca-hoja"
            data-title="Mosca sobre hoja"
            data-title-en="Fly on a leaf"
            data-sub="Díptero · A Coruña"
-           data-sub-en="Diptera · A Coruña"
-           onclick="openLightbox(this)">
-        <div class="gallery-placeholder ratio-wide ph-macro-green">
-          <img src="img/DSC9541.jpg" alt="Mosca sobre una hoja" loading="lazy" decoding="async">
-        </div>
+           data-sub-en="Diptera · A Coruña">
+        <a class="pswp-item" href="img/DSC9541.jpg" data-pswp-width="5443" data-pswp-height="3629">
+          <div class="gallery-placeholder ratio-wide ph-macro-green">
+            <img src="img/DSC9541.jpg" alt="Mosca sobre una hoja" loading="lazy" decoding="async">
+          </div>
         <div class="gallery-overlay">
           <div class="gallery-caption">
             <small data-es="Macro" data-en="Macro">Macro</small>
             <span data-es="Mosca sobre hoja" data-en="Fly on a leaf">Mosca sobre hoja</span>
           </div>
         </div>
+        </a>
       </div>
-
       <div class="gallery-item"
            data-cat="macro"
            data-photo-id="abeja-alstroemeria"
            data-title="Abeja en Alstroemeria"
            data-title-en="Bee on Alstroemeria"
            data-sub="Alstroemeria · A Coruña"
-           data-sub-en="Alstroemeria · A Coruña"
-           onclick="openLightbox(this)">
-        <div class="gallery-placeholder ratio-wide ph-macro-red">
-          <img src="img/DSC9596.jpg" alt="Abeja sobre flor rosa" loading="lazy" decoding="async">
-        </div>
+           data-sub-en="Alstroemeria · A Coruña">
+        <a class="pswp-item" href="img/DSC9596.jpg" data-pswp-width="6386" data-pswp-height="4257">
+          <div class="gallery-placeholder ratio-wide ph-macro-red">
+            <img src="img/DSC9596.jpg" alt="Abeja sobre flor rosa" loading="lazy" decoding="async">
+          </div>
         <div class="gallery-overlay">
           <div class="gallery-caption">
             <small data-es="Macro" data-en="Macro">Macro</small>
             <span data-es="Abeja en Alstroemeria" data-en="Bee on Alstroemeria">Abeja en Alstroemeria</span>
           </div>
         </div>
+        </a>
       </div>
-
     </div><!-- /gallery-grid -->
   </section>
 
@@ -192,35 +193,15 @@
   </footer>
 
 
-  <!-- ═══════════════════════════════════════════
-       LIGHTBOX
-  ═══════════════════════════════════════════ -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
-    <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar">×</button>
-
-    <div class="lightbox-content">
-      <div class="lightbox-ph" id="lightbox-ph" aria-hidden="true">
-        <span data-es="Vista previa no disponible"
-              data-en="Preview not available">Vista previa no disponible</span>
-      </div>
-
-      <div class="lightbox-info">
-        <h3 id="lightbox-title"></h3>
-        <p  id="lightbox-sub"></p>
-        <p  id="lightbox-desc" class="lightbox-desc"></p>
-        <p  id="lightbox-gear" class="lightbox-gear"></p>
-        <a id="lightbox-request" class="btn btn-primary lightbox-request"
-           data-es="Solicitar este print" data-en="Request this print">Solicitar este print</a>
-      </div>
-    </div>
-  </div>
-
 
   <!-- ═══════════════════════════════════════════
        SCRIPTS
   ═══════════════════════════════════════════ -->
   <script src="js/lang.js"></script>
   <script src="js/gallery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@5/dist/umd/photoswipe.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@5/dist/umd/photoswipe-lightbox.umd.min.js"></script>
+  <script src="js/pswp-init.js"></script>
   <script src="js/main.js"></script>
 
 </body>

@@ -64,6 +64,10 @@ function setLang(lang) {
   } catch (e) {
     /* localStorage puede no estar disponible (modo privado, etc.) */
   }
+
+  /* ── Avisar a otros scripts (p.ej. js/pswp-init.js, para refrescar
+       la caption del lightbox si está abierto) de que el idioma cambió ── */
+  document.dispatchEvent(new CustomEvent('langchange', { detail: { lang } }));
 }
 
 /* ── Al cargar cualquier página, aplicar el último idioma guardado ── */
