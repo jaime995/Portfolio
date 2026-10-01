@@ -101,24 +101,16 @@
     <!-- Varias fotos en crossfade (ver js/hero-rotate.js): una de
          cada categoría, distintas de las que usan las tarjetas de
          "Galería" más abajo para no repetir imagen en la misma
-         página. Cada una tiene una versión horizontal (escritorio)
-         y un recorte vertical propio para móvil (no es el mismo
-         encuadre estirado: ver img/hero/), sorteado con <picture>.
+         página. Una sola versión de cada foto (nada de recortes
+         verticales artificiales) — el encuadre en móvil se ajusta
+         con object-position en css/style.css, afinado a mano por
+         foto para que el sujeto principal no quede cortado.
          La primera lleva fetchpriority="high" y la clase is-active
          para que se vea de inmediato aunque el JS no llegue a cargar. -->
     <div class="hero-bg" aria-hidden="true">
-      <picture>
-        <source media="(max-width: 700px)" srcset="img/hero/hero-atardeceres-vertical.jpg">
-        <img class="is-active" src="img/DSC6260.jpg" alt="" fetchpriority="high" decoding="async">
-      </picture>
-      <picture>
-        <source media="(max-width: 700px)" srcset="img/hero/hero-astro-vertical.jpg">
-        <img src="img/HorseHead_01.jpg" alt="" decoding="async">
-      </picture>
-      <picture>
-        <source media="(max-width: 700px)" srcset="img/hero/hero-macro-vertical.jpg">
-        <img src="img/DSC9596.jpg" alt="" decoding="async">
-      </picture>
+      <img class="is-active hero-bg-atardeceres" src="img/DSC6260.jpg" alt="" fetchpriority="high" decoding="async">
+      <img class="hero-bg-astro" src="img/HorseHead_01.jpg" alt="" decoding="async">
+      <img class="hero-bg-macro" src="img/DSC9596.jpg" alt="" decoding="async">
     </div>
     <div class="hero-overlay" aria-hidden="true"></div>
 

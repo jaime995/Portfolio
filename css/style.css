@@ -457,6 +457,23 @@ ul { list-style: none; }
   opacity: 1;
 }
 
+/* Las tres fotos son horizontales (3:2 / 4:3); en pantallas estrechas
+   object-fit:cover recorta bastante por los lados, así que afinamos
+   el punto horizontal por foto para que el sujeto principal (sol,
+   torre, nebulosa, insecto) no se quede fuera de encuadre — sin
+   generar ninguna versión "vertical" aparte de la misma imagen. */
+.hero-bg img.hero-bg-atardeceres {
+  object-position: 40% 55%;
+}
+
+.hero-bg img.hero-bg-astro {
+  object-position: 50% 46%;
+}
+
+.hero-bg img.hero-bg-macro {
+  object-position: 42% 50%;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-bg img {
     transition: none;
