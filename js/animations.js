@@ -29,10 +29,13 @@
 
   /* ─────────────────────────────────────────
      1. PARALLAX SUTIL DEL HERO
+     querySelectorAll (no solo la primera foto): el hero puede tener
+     varias imágenes en crossfade (ver js/hero-rotate.js) y todas
+     deben moverse igual, se vea la que se vea en cada momento.
   ───────────────────────────────────────────── */
-  const heroImg = document.querySelector('.hero-bg img');
-  if (heroImg) {
-    gsap.to(heroImg, {
+  const heroImgs = document.querySelectorAll('.hero-bg img');
+  if (heroImgs.length) {
+    gsap.to(heroImgs, {
       yPercent: 14,
       ease: 'none',
       scrollTrigger: {

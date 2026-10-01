@@ -56,7 +56,7 @@
             <li><a href="macro.html" data-es="Macro" data-en="Macro">Macro</a></li>
           </ul>
         </li>
-        <li><a href="#about"    data-es="Sobre mí"  data-en="About">Sobre mí</a></li>
+        <li><a href="sobre-mi.html"    data-es="Sobre mí"  data-en="About">Sobre mí</a></li>
         <li><a href="#contact"  data-es="Contacto"  data-en="Contact">Contacto</a></li>
       </ul>
 
@@ -84,7 +84,7 @@
       <li><a href="macro.html" data-es="Macro" data-en="Macro">Macro</a></li>
     </ul>
     <div class="nav-mobile-sub">
-      <a href="#about" data-es="Sobre mí" data-en="About">Sobre mí</a>
+      <a href="sobre-mi.html" data-es="Sobre mí" data-en="About">Sobre mí</a>
       <a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a>
     </div>
   </div>
@@ -98,7 +98,28 @@
   ═══════════════════════════════════════════ -->
   <section class="hero" id="hero">
 
-    <div class="hero-bg" aria-hidden="true"><img src="img/DSC6260.jpg" alt="" fetchpriority="high" decoding="async"></div>
+    <!-- Varias fotos en crossfade (ver js/hero-rotate.js): una de
+         cada categoría, distintas de las que usan las tarjetas de
+         "Galería" más abajo para no repetir imagen en la misma
+         página. Cada una tiene una versión horizontal (escritorio)
+         y un recorte vertical propio para móvil (no es el mismo
+         encuadre estirado: ver img/hero/), sorteado con <picture>.
+         La primera lleva fetchpriority="high" y la clase is-active
+         para que se vea de inmediato aunque el JS no llegue a cargar. -->
+    <div class="hero-bg" aria-hidden="true">
+      <picture>
+        <source media="(max-width: 700px)" srcset="img/hero/hero-atardeceres-vertical.jpg">
+        <img class="is-active" src="img/DSC6260.jpg" alt="" fetchpriority="high" decoding="async">
+      </picture>
+      <picture>
+        <source media="(max-width: 700px)" srcset="img/hero/hero-astro-vertical.jpg">
+        <img src="img/HorseHead_01.jpg" alt="" loading="lazy" decoding="async">
+      </picture>
+      <picture>
+        <source media="(max-width: 700px)" srcset="img/hero/hero-macro-vertical.jpg">
+        <img src="img/DSC9596.jpg" alt="" loading="lazy" decoding="async">
+      </picture>
+    </div>
     <div class="hero-overlay" aria-hidden="true"></div>
 
     <div class="hero-content">
@@ -122,86 +143,12 @@
 
       <div class="hero-actions">
         <a class="hero-action" href="#gallery" data-es="Explorar fotografías" data-en="Explore photographs">Explorar fotografías</a>
-        <a class="hero-action hero-action-secondary" href="#about" data-es="Conocer al fotógrafo" data-en="Meet the photographer">Conocer al fotógrafo</a>
+        <a class="hero-action hero-action-secondary" href="sobre-mi.html" data-es="Conocer al fotógrafo" data-en="Meet the photographer">Conocer al fotógrafo</a>
       </div>
     </div>
 
     <div class="hero-scroll" aria-hidden="true"
          data-es="Scroll" data-en="Scroll">Scroll</div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════════
-       SOBRE MÍ
-       - Texto bilingüe
-       - Tarjetas de equipo (stats)
-         Modifica los datos de equipo aquí abajo
-  ═══════════════════════════════════════════ -->
-  <section class="about" id="about">
-
-    <div class="about-text-block">
-      <p class="section-label"
-         data-es="Sobre el fotógrafo"
-         data-en="About the photographer">Sobre el fotógrafo</p>
-
-      <h2 class="about-title"
-          data-es="Luz, tiempo<br>y escala"
-          data-en="Light, time<br>and scale">Luz, tiempo<br>y escala</h2>
-
-      <div class="about-body">
-        <p data-es="Fotógrafo aficionado con base en A Coruña. Trabajo en dos extremos opuestos de la escala: la intimidad de un insecto sobre un pétalo y la distancia de una nebulosa a miles de años luz."
-           data-en="Amateur photographer based in A Coruña. I work at two opposite ends of scale: the intimacy of an insect on a petal and the distance of a nebula thousands of light-years away.">
-          Fotógrafo aficionado con base en A Coruña. Trabajo en dos extremos opuestos de la escala: la intimidad de un insecto sobre un pétalo y la distancia de una nebulosa a miles de años luz.
-        </p>
-        <p data-es="La Torre de Hércules es mi referencia constante. Un punto fijo de 2.000 años de historia bajo cielos que cambian cada noche."
-           data-en="The Tower of Hercules is my constant reference. A fixed point of 2,000 years of history beneath skies that change every night.">
-          La Torre de Hércules es mi referencia constante. Un punto fijo de 2.000 años de historia bajo cielos que cambian cada noche.
-        </p>
-      </div>
-    </div>
-
-    <!-- TARJETAS DE EQUIPO
-         Añade o modifica tarjetas según tu equipo actual
-    -->
-    <div class="about-stats">
-
-      <div class="stat-card">
-        <div class="stat-number">72<span class="stat-unit">ED</span></div>
-        <div class="stat-label"
-             data-es="Skywatcher 72ED · Astrofotografía"
-             data-en="Skywatcher 72ED · Astrophotography">
-          Skywatcher 72ED · Astrofotografía
-        </div>
-      </div>
-
-      <div class="stat-card">
-        <div class="stat-number">a7<span class="stat-unit">IV</span></div>
-        <div class="stat-label"
-             data-es="Sony a7IV · Fotografía general"
-             data-en="Sony a7IV · General photography">
-          Sony a7IV · Fotografía general
-        </div>
-      </div>
-
-      <div class="stat-card">
-        <div class="stat-number">600<span class="stat-unit">mm</span></div>
-        <div class="stat-label"
-             data-es="Sony 200-600 · Torre &amp; paisaje"
-             data-en="Sony 200-600 · Tower &amp; landscape">
-          Sony 200-600 · Torre &amp; paisaje
-        </div>
-      </div>
-
-      <div class="stat-card">
-        <div class="stat-number">∞</div>
-        <div class="stat-label"
-             data-es="Años luz de distancia"
-             data-en="Light years away">
-          Años luz de distancia
-        </div>
-      </div>
-
-    </div>
   </section>
 
 
@@ -225,21 +172,24 @@
 
     <div class="gallery-cards">
 
-      <a href="astro.html" class="gallery-card" style="background-image:url('img/M42.jpg')">
+      <a href="astro.html" class="gallery-card">
+        <div class="gallery-card-bg" style="background-image:url('img/M42.jpg')"></div>
         <div class="gallery-card-overlay">
           <h3 class="gallery-card-title" data-es="Astrofotografía" data-en="Astrophotography">Astrofotografía</h3>
           <span class="gallery-card-count" data-es="9 fotos" data-en="9 photos">9 fotos</span>
         </div>
       </a>
 
-      <a href="atardeceres.html" class="gallery-card" style="background-image:url('img/torre-luna-llena.jpg')">
+      <a href="atardeceres.html" class="gallery-card">
+        <div class="gallery-card-bg" style="background-image:url('img/torre-luna-llena.jpg')"></div>
         <div class="gallery-card-overlay">
           <h3 class="gallery-card-title" data-es="Alineaciones" data-en="Alignments">Alineaciones</h3>
           <span class="gallery-card-count" data-es="8 fotos" data-en="8 photos">8 fotos</span>
         </div>
       </a>
 
-      <a href="macro.html" class="gallery-card" style="background-image:url('img/DSC9642.jpg')">
+      <a href="macro.html" class="gallery-card">
+        <div class="gallery-card-bg" style="background-image:url('img/DSC9642.jpg')"></div>
         <div class="gallery-card-overlay">
           <h3 class="gallery-card-title" data-es="Macro" data-en="Macro">Macro</h3>
           <span class="gallery-card-count" data-es="4 fotos" data-en="4 photos">4 fotos</span>
@@ -257,6 +207,8 @@
          Envía un email a jaime@jaimeg.es vía FormSubmit.co
   ═══════════════════════════════════════════ -->
   <section class="contact" id="contact">
+    <div class="contact-grid">
+
     <div class="contact-inner">
 
       <p class="section-label"
@@ -376,6 +328,8 @@
         </button>
       </form>
     </div>
+
+    </div>
   </section>
 
 
@@ -383,11 +337,18 @@
        FOOTER
   ═══════════════════════════════════════════ -->
   <footer>
-    <p>© <span id="footer-year"></span> Jaime García ·
-      <span data-es="Todos los derechos reservados"
-            data-en="All rights reserved">Todos los derechos reservados</span>
-    </p>
-    <a href="https://instagram.com/jaimeg95_" target="_blank" rel="noopener">@jaimeg95_</a>
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">Jaime García<span class="footer-logo-dot">.</span></a>
+      <p>© <span id="footer-year"></span> ·
+        <span data-es="Todos los derechos reservados"
+              data-en="All rights reserved">Todos los derechos reservados</span>
+      </p>
+    </div>
+    <div class="footer-links">
+      <a href="sobre-mi.html" data-es="Sobre mí" data-en="About">Sobre mí</a>
+      <a href="mailto:jaime@jaimeg.es" data-es="Email" data-en="Email">Email</a>
+      <a href="https://instagram.com/jaimeg95_" target="_blank" rel="noopener">@jaimeg95_</a>
+    </div>
   </footer>
 
 
@@ -399,6 +360,7 @@
   ═══════════════════════════════════════════ -->
   <script src="js/lang.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/hero-rotate.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="js/animations.js"></script>

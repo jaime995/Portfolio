@@ -70,7 +70,7 @@
     gallery: '#gallery-grid',
     children: 'a.pswp-item',
     pswpModule: PhotoSwipe,
-    bgOpacity: 0.96,
+    bgOpacity: 1,
     showHideAnimationType: 'fade',
   });
 
