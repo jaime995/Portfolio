@@ -1498,8 +1498,13 @@ footer a:hover {
     padding: 0 var(--padding-page) 56px;
   }
 
+  /* En móvil el bloque de texto del hero puede ocupar casi toda la
+     altura (título a 3 líneas + sub + botones), así que "Scroll" y
+     su línea animada acaban pisando "Conocer al fotógrafo". Al no
+     caber bien, mejor quitarlo aquí — en escritorio sí hay margen de
+     sobra y se queda. */
   .hero-scroll {
-    right: var(--padding-page);
+    display: none;
   }
 
   .gallery-cards {
