@@ -457,11 +457,12 @@ ul { list-style: none; }
   opacity: 1;
 }
 
-/* Las tres fotos son horizontales (3:2 / 4:3); en pantallas estrechas
-   object-fit:cover recorta bastante por los lados, así que afinamos
-   el punto horizontal por foto para que el sujeto principal (sol,
-   torre, nebulosa, insecto) no se quede fuera de encuadre — sin
-   generar ninguna versión "vertical" aparte de la misma imagen. */
+/* Astro y macro son horizontales; en pantallas estrechas object-fit:cover
+   recorta bastante por los lados, así que afinamos el punto horizontal
+   por foto para que el sujeto principal (nebulosa, insecto) no se quede
+   fuera de encuadre. La de la torre, en cambio, carga en móvil una foto
+   vertical de verdad (DSC5014.jpg, ver <picture> en el HTML), así que
+   en ese ancho casi no hace falta recorte: centrada queda bien. */
 .hero-bg img.hero-bg-atardeceres {
   object-position: 40% 55%;
 }
@@ -472,6 +473,12 @@ ul { list-style: none; }
 
 .hero-bg img.hero-bg-macro {
   object-position: 42% 50%;
+}
+
+@media (max-width: 700px) {
+  .hero-bg img.hero-bg-atardeceres {
+    object-position: 50% 50%;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

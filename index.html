@@ -101,14 +101,18 @@
     <!-- Varias fotos en crossfade (ver js/hero-rotate.js): una de
          cada categoría, distintas de las que usan las tarjetas de
          "Galería" más abajo para no repetir imagen en la misma
-         página. Una sola versión de cada foto (nada de recortes
-         verticales artificiales) — el encuadre en móvil se ajusta
-         con object-position en css/style.css, afinado a mano por
-         foto para que el sujeto principal no quede cortado.
+         página. Astro y macro son horizontales y se recortan con
+         object-position en css/style.css (el encuadre aguanta bien
+         el recorte). La de la torre usa <picture>: en móvil carga
+         DSC5014.jpg, una foto vertical de verdad (sol tras la Torre
+         de Hércules), no un recorte artificial de la horizontal.
          La primera lleva fetchpriority="high" y la clase is-active
          para que se vea de inmediato aunque el JS no llegue a cargar. -->
     <div class="hero-bg" aria-hidden="true">
-      <img class="is-active hero-bg-atardeceres" src="img/DSC6260.jpg" alt="" fetchpriority="high" decoding="async">
+      <picture>
+        <source media="(max-width: 700px)" srcset="img/DSC5014.jpg">
+        <img class="is-active hero-bg-atardeceres" src="img/DSC6260.jpg" alt="" fetchpriority="high" decoding="async">
+      </picture>
       <img class="hero-bg-astro" src="img/HorseHead_01.jpg" alt="" decoding="async">
       <img class="hero-bg-macro" src="img/DSC9596.jpg" alt="" decoding="async">
     </div>
