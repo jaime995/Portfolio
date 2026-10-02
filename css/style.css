@@ -85,6 +85,17 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  /* Disuade el guardado rápido de imágenes: ni esto ni lo de main.js
+     (desactivar click derecho y arrastre) es infalible — cualquiera
+     con DevTools o una captura de pantalla puede saltárselo — pero
+     frena el "arrastrar al escritorio" y el "Guardar imagen como"
+     del menú contextual, y en iOS el menú de "Guardar imagen" del
+     toque largo (-webkit-touch-callout). */
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 a {

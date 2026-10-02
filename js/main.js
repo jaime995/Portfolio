@@ -7,6 +7,7 @@
    3. Fade-in de secciones al hacer scroll (IntersectionObserver)
    4. Formulario de solicitud de prints (preselección + agradecimiento)
    5. Menú hamburguesa en móvil
+   6. Protección básica de imágenes (click derecho / arrastre)
 ═══════════════════════════════════════════════════════════════ */
 
 
@@ -149,6 +150,25 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'Escape') closeMobileMenu();
     });
   }
+
+
+  /* ─────────────────────────────────────────
+     6. PROTECCIÓN BÁSICA DE IMÁGENES
+     Desactiva el menú contextual (click derecho → "Guardar imagen
+     como...") y el arrastre ("drag al escritorio") sobre cualquier
+     <img> de la página, incluidas las que PhotoSwipe inserta más
+     tarde en el lightbox (por eso se delega en document en vez de
+     enlazar cada <img> una a una). Es una disuasión, no un bloqueo
+     real: con las herramientas de desarrollador, viendo el código
+     fuente o con una captura de pantalla se puede saltar igualmente.
+  ───────────────────────────────────────────── */
+  document.addEventListener('contextmenu', e => {
+    if (e.target.tagName === 'IMG') e.preventDefault();
+  });
+
+  document.addEventListener('dragstart', e => {
+    if (e.target.tagName === 'IMG') e.preventDefault();
+  });
 
 
 });
